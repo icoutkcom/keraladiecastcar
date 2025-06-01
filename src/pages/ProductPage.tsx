@@ -88,14 +88,12 @@ const ProductPage = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Product Image */}
-            <div className="glass-card rounded-xl p-6">
-              <img src={product.image} alt={product.name} className="w-full h-96 object-contain rounded-lg" />
-            </div>
+            
 
             {/* Product Details */}
             <div className="space-y-6">
               <div>
-                <h1 className="text-3xl font-bold text-white mb-2">{product.name}</h1>
+                
                 <div className="flex items-center space-x-2 mb-4">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
