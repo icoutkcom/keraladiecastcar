@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Package, Info, Phone, FileText, Shield, Truck, RotateCcw, Cookie, Scale, MapPin, X } from 'lucide-react';
+import { Home, Package, Info, Phone, FileText, Shield, Truck, RotateCcw, Cookie, Scale, MapPin, X, Grid3X3 } from 'lucide-react';
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarHeader } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import { useSidebar } from '@/components/ui/sidebar';
@@ -9,6 +9,10 @@ const mainItems = [{
   title: "Home",
   url: "/",
   icon: Home
+}, {
+  title: "Categories",
+  url: "/categories",
+  icon: Grid3X3
 }, {
   title: "All Products",
   url: "/products",

@@ -5,6 +5,7 @@ import { SidebarProvider } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/AppSidebar';
 import Index from '@/pages/Index';
 import ProductPage from '@/pages/ProductPage';
+import CategoriesPage from '@/pages/CategoriesPage';
 import NotFound from '@/pages/NotFound';
 import ReturnRefundPolicy from '@/pages/ReturnRefundPolicy';
 import ShippingPolicy from '@/pages/ShippingPolicy';
@@ -23,6 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/product/:id" element={<ProductPage />} />
+              <Route path="/categories" element={<CategoriesPage />} />
               <Route path="/return-refund-policy" element={<ReturnRefundPolicy />} />
               <Route path="/shipping-policy" element={<ShippingPolicy />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />

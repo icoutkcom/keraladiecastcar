@@ -3,6 +3,7 @@ import React, { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import SearchSection from '@/components/SearchSection';
 import ProductGrid from '@/components/ProductGrid';
+import CategoryButtons from '@/components/CategoryButtons';
 import Footer from '@/components/Footer';
 import DataImportTool from '@/components/DataImportTool';
 import { generateProducts, Product } from '@/utils/productData';
@@ -72,6 +73,7 @@ const Index = () => {
           {!showProducts ? (
             <>
               <SearchSection onSearch={handleSearch} />
+              <CategoryButtons />
             </>
           ) : (
             <div className="pt-24 pb-12">
