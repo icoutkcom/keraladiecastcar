@@ -1,7 +1,5 @@
 
 import React from 'react';
-import { ShoppingCart, Heart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 interface Product {
   id: number;
@@ -17,7 +15,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   return (
-    <div className="group relative glass-card rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+    <div className="group relative glass-card rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
       <div className="aspect-square overflow-hidden bg-gray-900/50">
         <img
           src={product.image}
@@ -32,30 +30,9 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
       </div>
       
       <div className="p-4">
-        <h3 className="font-semibold text-white text-lg mb-2 line-clamp-2 group-hover:text-gray-200 transition-colors">
+        <h3 className="font-semibold text-white text-lg line-clamp-2 group-hover:text-gray-200 transition-colors text-center">
           {product.name}
         </h3>
-        <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-white">
-            ${product.price.toFixed(2)}
-          </span>
-          <div className="flex space-x-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="glass hover:bg-white/20 transition-all duration-300"
-            >
-              <Heart className="h-4 w-4" />
-            </Button>
-            <Button
-              onClick={() => onAddToCart(product)}
-              className="glass hover:bg-white/20 transition-all duration-300"
-            >
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              Add
-            </Button>
-          </div>
-        </div>
       </div>
       
       <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

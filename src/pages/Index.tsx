@@ -3,28 +3,24 @@ import React, { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ProductGrid from '@/components/ProductGrid';
-import FilterSidebar from '@/components/FilterSidebar';
-import { generateProducts, categories, Product } from '@/utils/productData';
+import { generateProducts, Product } from '@/utils/productData';
 import { useToast } from '@/hooks/use-toast';
+import { Input } from '@/components/ui/input';
+import { Search } from 'lucide-react';
 
 const Index = () => {
   const { toast } = useToast();
   const [products] = useState(() => generateProducts(2000));
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
   const [cartItems, setCartItems] = useState(0);
   const [showProducts, setShowProducts] = useState(false);
 
   const filteredProducts = useMemo(() => {
     return products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
-      const matchesPrice = product.price >= priceRange[0] && product.price <= priceRange[1];
-      
-      return matchesSearch && matchesCategory && matchesPrice;
+      return matchesSearch;
     });
-  }, [products, searchQuery, selectedCategories, priceRange]);
+  }, [products, searchQuery]);
 
   const handleAddToCart = (product: Product) => {
     setCartItems(prev => prev + 1);
@@ -32,20 +28,6 @@ const Index = () => {
       title: "Added to cart",
       description: `${product.name} has been added to your cart.`,
     });
-  };
-
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategories(prev => 
-      prev.includes(category) 
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
-    );
-  };
-
-  const handleClearFilters = () => {
-    setSelectedCategories([]);
-    setPriceRange([0, 1000]);
-    setSearchQuery('');
   };
 
   const handleSearch = (query: string) => {
@@ -62,40 +44,37 @@ const Index = () => {
       ) : (
         <div className="pt-24 pb-12">
           <div className="container mx-auto px-4">
-            <div className="flex gap-8">
-              <FilterSidebar
-                categories={categories}
-                selectedCategories={selectedCategories}
-                priceRange={priceRange}
-                onCategoryChange={handleCategoryChange}
-                onPriceChange={setPriceRange}
-                onClearFilters={handleClearFilters}
-              />
-              
-              <div className="flex-1">
-                <div className="mb-8">
-                  <h2 className="text-3xl font-bold text-white mb-2">
-                    {searchQuery ? `Search Results for "${searchQuery}"` : 'All Products'}
-                  </h2>
-                  <p className="text-gray-400">
-                    Showing {filteredProducts.length} of {products.length} products
-                  </p>
-                </div>
-                
-                <ProductGrid
-                  products={filteredProducts.slice(0, 50)} // Show first 50 for performance
-                  onAddToCart={handleAddToCart}
+            <div className="mb-8">
+              <div className="relative max-w-md mx-auto mb-8">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Input
+                  placeholder="Search products by name..."
+                  className="pl-10 glass border-white/20 text-white placeholder:text-gray-400"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                
-                {filteredProducts.length > 50 && (
-                  <div className="mt-12 text-center">
-                    <p className="text-gray-400 mb-4">
-                      Showing first 50 products. Use filters to narrow down results.
-                    </p>
-                  </div>
-                )}
               </div>
+              
+              <h2 className="text-3xl font-bold text-white mb-2 text-center">
+                {searchQuery ? `Search Results for "${searchQuery}"` : 'All Products'}
+              </h2>
+              <p className="text-gray-400 text-center">
+                Showing {filteredProducts.length} of {products.length} products
+              </p>
             </div>
+            
+            <ProductGrid
+              products={filteredProducts.slice(0, 50)}
+              onAddToCart={handleAddToCart}
+            />
+            
+            {filteredProducts.length > 50 && (
+              <div className="mt-12 text-center">
+                <p className="text-gray-400 mb-4">
+                  Showing first 50 products. Use search to narrow down results.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       )}
