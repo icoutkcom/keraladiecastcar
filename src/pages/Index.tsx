@@ -2,7 +2,6 @@
 import React, { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import PromoBanner from '@/components/PromoBanner';
 import SearchSection from '@/components/SearchSection';
 import ProductGrid from '@/components/ProductGrid';
 import Footer from '@/components/Footer';
@@ -45,7 +44,6 @@ const Index = () => {
       {!showProducts ? (
         <>
           <HeroSection />
-          <PromoBanner />
           <SearchSection onSearch={handleSearch} />
         </>
       ) : (
