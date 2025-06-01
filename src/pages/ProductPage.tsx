@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Truck, Shield, CreditCard, Star, Users, Award, CheckCircle } from 'lucide-react';
+
 const ProductPage = () => {
   const {
     id
@@ -75,6 +76,11 @@ const ProductPage = () => {
     title: "Secure Payments",
     description: "SSL encrypted checkout"
   }];
+
+  const handleAddToCart = () => {
+    window.open('https://wa.me/qr/ZSKPUHIUU5JKJ1', '_blank');
+  };
+
   return <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Header onSearch={() => {}} cartItems={0} />
       
@@ -117,7 +123,10 @@ const ProductPage = () => {
               </div>
 
               {/* Purchase Button */}
-              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3">
+              <Button 
+                onClick={handleAddToCart}
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3"
+              >
                 Add to Cart - ₹{selectedPrice}
               </Button>
 
@@ -215,4 +224,5 @@ const ProductPage = () => {
       <Footer />
     </div>;
 };
+
 export default ProductPage;
