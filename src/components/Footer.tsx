@@ -26,7 +26,16 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors text-sm">Home</Link></li>
+              <li><Link to="/products" className="text-gray-400 hover:text-white transition-colors text-sm">All Products</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors text-sm">About Us</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors text-sm">Contact</Link></li>
+              <li><Link to="/support" className="text-gray-400 hover:text-white transition-colors text-sm">Support</Link></li>
+            </ul>
+          </div>
 
           {/* Policies */}
           <div>
