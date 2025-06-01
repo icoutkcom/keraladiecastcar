@@ -17,9 +17,7 @@ const SearchSection = ({
       <div className="container mx-auto max-w-4xl py-[9px] px-0">
         <div className="text-center mb-8">
           
-          <p className="text-xs text-gray-400/0">
-            Search through our extensive collection of premium diecast cars
-          </p>
+          
         </div>
         
         <form onSubmit={handleSearch} className="glass-card rounded-2xl p-6">
