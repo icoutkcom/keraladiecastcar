@@ -3,6 +3,7 @@ import React, { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ProductGrid from '@/components/ProductGrid';
+import Footer from '@/components/Footer';
 import { generateProducts, Product } from '@/utils/productData';
 import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
@@ -103,6 +104,8 @@ const Index = () => {
           </div>
         </div>
       )}
+      
+      <Footer />
     </div>
   );
 };
