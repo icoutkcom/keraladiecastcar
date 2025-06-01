@@ -26,6 +26,8 @@ const categories = [
   { name: 'Pagani', value: 'pagani' },
 ];
 
+const PRODUCTS_PER_PAGE = 20;
+
 const CategoriesPage = () => {
   const { toast } = useToast();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -37,6 +39,7 @@ const CategoriesPage = () => {
     return categoryParam || 'all';
   });
   const [cartItems, setCartItems] = useState(0);
+  const [displayedCount, setDisplayedCount] = useState(PRODUCTS_PER_PAGE);
 
   // Update selected category when URL changes
   useEffect(() => {
@@ -47,11 +50,18 @@ const CategoriesPage = () => {
     if (categoryFromUrl && categoryFromUrl !== selectedCategory) {
       console.log('Updating selectedCategory from URL:', categoryFromUrl);
       setSelectedCategory(categoryFromUrl);
+      setDisplayedCount(PRODUCTS_PER_PAGE); // Reset displayed count when category changes
     } else if (!categoryFromUrl && selectedCategory !== 'all') {
       console.log('No category in URL, setting to all');
       setSelectedCategory('all');
+      setDisplayedCount(PRODUCTS_PER_PAGE); // Reset displayed count
     }
   }, [searchParams, selectedCategory]);
+
+  // Reset displayed count when search query changes
+  useEffect(() => {
+    setDisplayedCount(PRODUCTS_PER_PAGE);
+  }, [searchQuery]);
 
   const filteredProducts = useMemo(() => {
     console.log('Filtering products with category:', selectedCategory);
@@ -62,16 +72,16 @@ const CategoriesPage = () => {
       const matchesSearch = searchQuery === '' || product.name.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
       
-      console.log(`Product: ${product.name}, Category: ${product.category}, Matches: ${matchesSearch && matchesCategory}`);
-      
       return matchesSearch && matchesCategory;
     });
     
     console.log('Filtered products count:', filtered.length);
-    console.log('First 5 filtered products:', filtered.slice(0, 5).map(p => ({ name: p.name, category: p.category })));
     
     return filtered;
   }, [products, searchQuery, selectedCategory]);
+
+  const displayedProducts = filteredProducts.slice(0, displayedCount);
+  const hasMoreProducts = displayedCount < filteredProducts.length;
 
   const handleAddToCart = (product: Product) => {
     setCartItems(prev => prev + 1);
@@ -98,6 +108,10 @@ const CategoriesPage = () => {
       setSearchParams({ category });
       console.log('URL updated with category:', category);
     }
+  };
+
+  const handleLoadMore = () => {
+    setDisplayedCount(prev => prev + PRODUCTS_PER_PAGE);
   };
 
   const selectedCategoryName = categories.find(cat => cat.value === selectedCategory)?.name || 'All';
@@ -139,7 +153,7 @@ const CategoriesPage = () => {
             </div>
             
             <p className="text-gray-400 text-center">
-              Showing {filteredProducts.length} products
+              Showing {displayedProducts.length} of {filteredProducts.length} products
               {selectedCategory !== 'all' && ` in ${selectedCategoryName}`}
               {searchQuery && ` matching "${searchQuery}"`}
             </p>
@@ -147,13 +161,17 @@ const CategoriesPage = () => {
           
           {filteredProducts.length > 0 ? (
             <>
-              <ProductGrid products={filteredProducts.slice(0, 100)} onAddToCart={handleAddToCart} />
+              <ProductGrid products={displayedProducts} onAddToCart={handleAddToCart} />
               
-              {filteredProducts.length > 100 && (
+              {hasMoreProducts && (
                 <div className="mt-12 text-center">
-                  <p className="text-gray-400 mb-4">
-                    Showing first 100 products. Use search or filters to narrow down results.
-                  </p>
+                  <Button 
+                    onClick={handleLoadMore}
+                    variant="outline"
+                    className="px-8 py-3 text-lg"
+                  >
+                    Load More Products ({filteredProducts.length - displayedCount} remaining)
+                  </Button>
                 </div>
               )}
             </>
