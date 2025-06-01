@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Package, Info, Phone, FileText, Shield, Truck, RotateCcw, Cookie, Scale, MapPin } from 'lucide-react';
-import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
+import { Home, Package, Info, Phone, FileText, Shield, Truck, RotateCcw, Cookie, Scale, MapPin, X } from 'lucide-react';
+import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarHeader } from '@/components/ui/sidebar';
+import { Button } from '@/components/ui/button';
+import { useSidebar } from '@/components/ui/sidebar';
+
 const mainItems = [{
   title: "Home",
   url: "/",
@@ -53,10 +56,45 @@ const legalItems = [{
   url: "/sitemap",
   icon: MapPin
 }];
+
 export function AppSidebar() {
+  const { setOpenMobile } = useSidebar();
+
+  const handleClose = () => {
+    setOpenMobile(false);
+  };
+
   return <Sidebar>
       <SidebarContent className="bg-zinc-950">
-        
+        <SidebarHeader className="border-b border-zinc-800 p-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-white">Menu</h2>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleClose}
+              className="text-white hover:bg-zinc-800"
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          </div>
+        </SidebarHeader>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {mainItems.map(item => <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <Link to={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>)}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
 
         <SidebarGroup>
           <SidebarGroupLabel>Policies</SidebarGroupLabel>
@@ -73,8 +111,6 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-
-        
       </SidebarContent>
     </Sidebar>;
 }
