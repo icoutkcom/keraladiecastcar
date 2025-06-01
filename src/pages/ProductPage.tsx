@@ -185,7 +185,7 @@ const ProductPage = () => {
 
           {/* Customer Reviews Section */}
           <div className="mt-16">
-            <h2 className="text-2xl font-bold text-white text-center mb-8">Happy Customer Reviews :)</h2>
+            <h2 className="font-bold text-white text-center mb-8 text-2xl">Happy Customer Reviews :)</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {reviews.map(review => <Card key={review.id} className="glass-card border-white/10">
                   <CardContent className="p-6">
