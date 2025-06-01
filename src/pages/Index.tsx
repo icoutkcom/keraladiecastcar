@@ -2,6 +2,8 @@
 import React, { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import PromoBanner from '@/components/PromoBanner';
+import SearchSection from '@/components/SearchSection';
 import ProductGrid from '@/components/ProductGrid';
 import Footer from '@/components/Footer';
 import { generateProducts, Product } from '@/utils/productData';
@@ -41,7 +43,11 @@ const Index = () => {
       <Header onSearch={handleSearch} cartItems={cartItems} />
       
       {!showProducts ? (
-        <HeroSection />
+        <>
+          <HeroSection />
+          <PromoBanner />
+          <SearchSection onSearch={handleSearch} />
+        </>
       ) : (
         <div className="pt-24 pb-12">
           <div className="container mx-auto px-4">
