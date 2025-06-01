@@ -6,7 +6,7 @@ export interface Product {
   category: string;
 }
 
-// Real products from Shopify data - Land Rover and Ferrari models
+// Real Land Rover products only
 const realProducts = [
   {
     id: 1,
@@ -407,469 +407,73 @@ const realProducts = [
     price: 14500,
     category: "land-rover"
   },
-  // Ferrari models start here
   {
     id: 58,
-    name: "1/12 Diecast Full opening KK Scale Ferrari 250 GTO in Red",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135378",
-    price: 28500,
-    category: "ferrari"
+    name: "1/18 Diecast Land Rover Range Rover 2 Doors 1970 Blue Almost Real",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/IMG-20250210_183806_091.jpg?v=1742565822",
+    price: 17500,
+    category: "land-rover"
   },
   {
     id: 59,
-    name: "1/12 Exclusive Mucheren Models Ferrari F40 [Resin | Red | Limited Edition]",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135387",
-    price: 32000,
-    category: "ferrari"
+    name: "1/18 Resin Land Rover Range Rover Blue by LS",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/roverroverblueold1.jpg?v=1742566002",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 60,
-    name: "1/12 Metal Diecast - Ferrari F40 Red model car by Norev",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135397",
-    price: 25000,
-    category: "ferrari"
+    name: "1/18 Diecast Land Rover Defender 90 Black Kyosho Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/defender90oldblack1.jpg?v=1742566098",
+    price: 14500,
+    category: "land-rover"
   },
   {
     id: 61,
-    name: "1/12 Resin Model CMR Ferrari 500 F2 Works Prototype 1953 Red",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135407",
-    price: 27500,
-    category: "ferrari"
+    name: "1/18 Diecast Land Rover Defender 110 Silver Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/ardefendersilver1.jpg?v=1742566349",
+    price: 15000,
+    category: "land-rover"
   },
   {
     id: 62,
-    name: "1/18 Action Figure - Enzo Ferrari by SF",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135415",
-    price: 3500,
-    category: "accessories"
+    name: "1/18 Diecast Miniature Land Rover Range Rover Classic Vogue CULT Silver Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/RRgrey1.jpg?v=1742566500",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 63,
-    name: "1/18 BBR  Ferrari Portofino M Rosso Corsa 322 Limited Edition",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135419",
-    price: 22500,
-    category: "ferrari"
+    name: "1/18 Diecast Land Rover Range Rover Sport SVR Blue Kyosho Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/6032816574584439541.jpg?v=1742566534",
+    price: 17500,
+    category: "land-rover"
   },
   {
     id: 64,
-    name: "1/18 BBR Models Ferrari Purosangue Red - Limited Edition (250 units)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135427",
-    price: 24500,
-    category: "ferrari"
+    name: "1/18 Land Rover Range Rover SV Autobiography Dynamic 2017 White LCD-Model",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/RR2.jpg?v=1742566583",
+    price: 18000,
+    category: "land-rover"
   },
   {
     id: 65,
-    name: "1/18 Bburago Ferrari 296 GTB Assetto Fiorano - Grey/ Yellow Diecast Model",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135437",
-    price: 8500,
-    category: "ferrari"
-  },
-  {
-    id: 66,
-    name: "1/18 Bburago Ferrari 296 GTB Assetto Fiorano Red/White model car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135446",
-    price: 8500,
-    category: "ferrari"
-  },
-  {
-    id: 67,
-    name: "1/18 Bburago Ferrari F1-75 C. Leclerc #16 Red model car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135455",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 68,
-    name: "1/18 Davis & Giovanni Ferrari 812 N-Largo Novitec - Black Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135464",
-    price: 18500,
-    category: "ferrari"
-  },
-  {
-    id: 69,
-    name: "1/18 Davis & Giovanni Ferrari F8 Tributo Limited Edition (60pcs) Red",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135474",
-    price: 19500,
-    category: "ferrari"
-  },
-  {
-    id: 70,
-    name: "1/18 Diecast  KK Scale Ferrari 356 GT4 2+2 black",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135484",
-    price: 16500,
-    category: "ferrari"
-  },
-  {
-    id: 71,
-    name: "1/18 Diecast  KK Scale Ferrari 356 GTB/4 1971 in Blue",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135492",
-    price: 16500,
-    category: "ferrari"
-  },
-  {
-    id: 72,
-    name: "1/18 Diecast  KK Scale Ferrari Testorossa 1986 in Black",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135501",
-    price: 17500,
-    category: "ferrari"
-  },
-  {
-    id: 73,
-    name: "1/18 Diecast - CMC Ferrari Dino 156 F1 1961 \"Sharknose\" in Red, Limited Edition",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135510",
-    price: 21500,
-    category: "ferrari"
-  },
-  {
-    id: 74,
-    name: "1/18 Diecast - Hotwheels Elite Ferrari California in Red/Beige",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135520",
-    price: 13500,
-    category: "ferrari"
-  },
-  {
-    id: 75,
-    name: "1/18 Diecast BBR Models  Ferrari LaFerrari Aperta blue Tour de france Limited Edition",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135529",
-    price: 26500,
-    category: "ferrari"
-  },
-  {
-    id: 76,
-    name: "1/18 Diecast Bburago Ferrari 296 GTB Assetto Fiorano red/ white",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135538",
-    price: 8500,
-    category: "ferrari"
-  },
-  {
-    id: 77,
-    name: "1/18 Diecast Bburago Ferrari 458 Speciale red / blue white line",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135547",
-    price: 8500,
-    category: "ferrari"
-  },
-  {
-    id: 78,
-    name: "1/18 Diecast Bburago Ferrari California T Signature Series Maroon",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135557",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 79,
-    name: "1/18 Diecast Bburago Ferrari DAYTONA SP3 WHITE Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135565",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 80,
-    name: "1/18 Diecast Bburago Ferrari Daytona SP3 with acrylic display case",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135572",
-    price: 11500,
-    category: "ferrari"
-  },
-  {
-    id: 81,
-    name: "1/18 Diecast Bburago Ferrari F1 -75 C.Sainz Red Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135583",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 82,
-    name: "1/18 Diecast Bburago Ferrari F1-75 C. Leclerc #16 matt Red / Yellow",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135589",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 83,
-    name: "1/18 Diecast Bburago Ferrari F50 Red",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135597",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 84,
-    name: "1/18 Diecast Bburago Ferrari FXX K #10 red/ silver",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135607",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 85,
-    name: "1/18 Diecast Bburago Ferrari FXX K #27 blue",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135617",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 86,
-    name: "1/18 Diecast Bburago Ferrari SF90 Spider Signature Series black",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135626",
-    price: 10500,
-    category: "ferrari"
-  },
-  {
-    id: 87,
-    name: "1/18 Diecast Bburago Signature Series  Ferrari FXX K #44 black / yellow",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135635",
-    price: 10500,
-    category: "ferrari"
-  },
-  {
-    id: 88,
-    name: "1/18 Diecast car Ferrari 488 GTB Red by Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135643",
-    price: 8500,
-    category: "ferrari"
-  },
-  {
-    id: 89,
-    name: "1/18 Diecast car Ferrari F50 Red Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135645",
-    price: 8500,
-    category: "ferrari"
-  },
-  {
-    id: 90,
-    name: "1/18 Diecast Ferrari 250 GT Spyder California 1960 Red Model Car by KK Models",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135654",
-    price: 17500,
-    category: "ferrari"
-  },
-  {
-    id: 91,
-    name: "1/18 Diecast Ferrari 250GT Berlinetta Red Model Car by Hot Wheels",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135662",
-    price: 13500,
-    category: "ferrari"
-  },
-  {
-    id: 92,
-    name: "1/18 Diecast Ferrari 348 GTB Red GT Spirit Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135664",
-    price: 15500,
-    category: "ferrari"
-  },
-  {
-    id: 93,
-    name: "1/18 Diecast Ferrari 458 Spider Model Car by Hot Wheels",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135671",
-    price: 13500,
-    category: "ferrari"
-  },
-  {
-    id: 94,
-    name: "1/18 Diecast Ferrari 488 GTB Red \"Signature Series\" Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135673",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 95,
-    name: "1/18 Diecast Ferrari 488 GTB Red BBR Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135682",
-    price: 22500,
-    category: "ferrari"
-  },
-  {
-    id: 96,
-    name: "1/18 Diecast Ferrari 488 GTE Le Mans 2020 Red BBR Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135691",
-    price: 24500,
-    category: "ferrari"
-  },
-  {
-    id: 97,
-    name: "1/18 Diecast Ferrari 488 Modificata Blue BBR Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135703",
-    price: 24500,
-    category: "ferrari"
-  },
-  {
-    id: 98,
-    name: "1/18 Diecast Ferrari 488 Modificata Yellow BBR Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135712",
-    price: 24500,
-    category: "ferrari"
-  },
-  {
-    id: 99,
-    name: "1/18 Diecast Ferrari 488 Spyder Red BBR Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135717",
-    price: 22500,
-    category: "ferrari"
-  },
-  {
-    id: 100,
-    name: "1/18 Diecast Ferrari 550 Maranello GT Spirit Red Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135727",
-    price: 15500,
-    category: "ferrari"
-  },
-  {
-    id: 101,
-    name: "1/18 Diecast Ferrari 812 Competizione 2021 Rosso Corsa 322 Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135735",
-    price: 24500,
-    category: "ferrari"
-  },
-  {
-    id: 102,
-    name: "1/18 Diecast Ferrari 812 Competizione 2021 Rosso Corsa 322Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135744",
-    price: 24500,
-    category: "ferrari"
-  },
-  {
-    id: 103,
-    name: "1/18 Diecast Ferrari 812 GTS White BBR Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135755",
-    price: 22500,
-    category: "ferrari"
-  },
-  {
-    id: 104,
-    name: "1/18 Diecast Ferrari 812 N-Largo Novitec Red IVY Models Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135765",
-    price: 18500,
-    category: "ferrari"
-  },
-  {
-    id: 105,
-    name: "1/18 Diecast Ferrari California T Blue  Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135771",
-    price: 8500,
-    category: "ferrari"
-  },
-  {
-    id: 106,
-    name: "1/18 Diecast Ferrari California T Closed Top Black Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135773",
-    price: 8500,
-    category: "ferrari"
-  },
-  {
-    id: 107,
-    name: "1/18 Diecast Ferrari California T Open Top Black \"Signature Series\" Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135780",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 108,
-    name: "1/18 Diecast Ferrari California T Open Top Red Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135782",
-    price: 8500,
-    category: "ferrari"
-  },
-  {
-    id: 109,
-    name: "1/18 Diecast Ferrari California T Red \"Signature Series\" Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135786",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 110,
-    name: "1/18 Diecast Ferrari California T White \"Signature Series\" Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135798",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 111,
-    name: "1/18 Diecast Ferrari F12 Berlinetta Camouflage by VV Models (17 of 30):",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135800",
-    price: 19500,
-    category: "ferrari"
-  },
-  {
-    id: 112,
-    name: "1/18 Diecast Ferrari F12 Berlinetta Red BBR Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135810",
-    price: 22500,
-    category: "ferrari"
-  },
-  {
-    id: 113,
-    name: "1/18 Diecast Ferrari F2001 Red Model Car by Hot Wheels",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135820",
-    price: 13500,
-    category: "ferrari"
-  },
-  {
-    id: 114,
-    name: "1/18 Diecast Ferrari F40 Red by Kyosho Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135822",
-    price: 16500,
-    category: "ferrari"
-  },
-  {
-    id: 115,
-    name: "1/18 Diecast Ferrari F50 Red GT Spirit Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135832",
-    price: 15500,
-    category: "ferrari"
-  },
-  {
-    id: 116,
-    name: "1/18 Diecast Ferrari FXX K EVO #27 Blue Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135837",
-    price: 9500,
-    category: "ferrari"
-  },
-  {
-    id: 117,
-    name: "1/18 Diecast Ferrari J50 Red BBR Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135847",
-    price: 22500,
-    category: "ferrari"
-  },
-  {
-    id: 118,
-    name: "1/18 Diecast Ferrari LaFerrari  Red with Black Top \"Signature Series\" Bburago Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135856",
-    price: 10500,
-    category: "ferrari"
-  },
-  {
-    id: 119,
-    name: "1/18 Diecast Ferrari LaFerrari Baby Blue BBR Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135858",
-    price: 24500,
-    category: "ferrari"
-  },
-  {
-    id: 120,
-    name: "1/18 Diecast Ferrari LaFerrari BBR Yellow Scale Model car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2025-01-24_20-52-52.jpg?v=1747135867",
-    price: 24500,
-    category: "ferrari"
+    name: "1/18 Diecast Land Rover Defender 90  Grey Kyosho Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/WhatsAppImage2022-12-28at15.39.04.jpg?v=1742566649",
+    price: 14500,
+    category: "land-rover"
   }
 ];
 
 // Categories for diecast cars
 export const categories = [
   'land-rover',
-  'ferrari',
-  'bmw',
-  'mercedes',
-  'audi',
-  'porsche',
-  'lamborghini',
-  'mclaren',
-  'accessories',
-  'vintage',
-  'racing'
+  'accessories'
 ];
 
 // Generate additional products to fill the catalog while keeping the real ones
 const generateAdditionalProducts = (startId: number, count: number): Product[] => {
   const additionalProducts: Product[] = [];
-  const brands = ['Land Rover', 'BMW', 'Mercedes', 'Audi', 'Porsche', 'Ferrari'];
   const models = ['Defender', 'Range Rover', 'Discovery', 'Evoque', 'Sport', 'Classic'];
   const scales = ['1:18', '1:24', '1:43'];
   const manufacturers = ['Almost Real', 'LCD', 'Kyosho', 'AUTOart', 'Minichamps'];
@@ -885,23 +489,21 @@ const generateAdditionalProducts = (startId: number, count: number): Product[] =
   
   for (let i = 0; i < count; i++) {
     const id = startId + i;
-    const brand = brands[Math.floor(Math.random() * brands.length)];
     const model = models[Math.floor(Math.random() * models.length)];
     const scale = scales[Math.floor(Math.random() * scales.length)];
     const manufacturer = manufacturers[Math.floor(Math.random() * manufacturers.length)];
     const year = 1990 + Math.floor(Math.random() * 34); // 1990-2024
     
-    const name = `${scale} Diecast ${manufacturer} ${brand} ${model} (${year})`;
+    const name = `${scale} Diecast ${manufacturer} Land Rover ${model} (${year})`;
     const image = fallbackImages[Math.floor(Math.random() * fallbackImages.length)];
     const price = Math.floor(Math.random() * 15000) + 5000; // ₹5000 - ₹20000
-    const category = brand.toLowerCase().replace(' ', '-');
     
     additionalProducts.push({
       id,
       name,
       image,
       price,
-      category
+      category: 'land-rover'
     });
   }
   
