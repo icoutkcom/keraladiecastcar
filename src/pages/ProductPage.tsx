@@ -51,7 +51,7 @@ const ProductPage = () => {
             {/* Product Details */}
             <div className="space-y-6">
               <div>
-                <h1 className="text-3xl font-bold text-white mb-2">{product.name}</h1>
+                
                 <div className="flex items-center space-x-2 mb-4">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
