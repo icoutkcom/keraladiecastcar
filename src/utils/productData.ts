@@ -1,4 +1,3 @@
-
 export interface Product {
   id: number;
   name: string;
@@ -96,7 +95,7 @@ const realProducts = [
 ];
 
 // Generate more products with different categories
-const carBrands = ['land-rover', 'mercedes', 'bmw', 'audi', 'toyota', 'honda'];
+const carBrands = ['land-rover', 'mercedes', 'bmw', 'audi', 'toyota', 'honda', 'porsche', 'rolls-royce', 'ferrari', 'lamborghini', 'mercedes-benz', 'pagani'];
 const productNames = [
   'Sport Edition',
   'Luxury Model',

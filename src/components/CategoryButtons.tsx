@@ -10,6 +10,12 @@ const categories = [
   { name: 'Audi', value: 'audi', color: 'bg-red-600 hover:bg-red-700' },
   { name: 'Toyota', value: 'toyota', color: 'bg-orange-600 hover:bg-orange-700' },
   { name: 'Honda', value: 'honda', color: 'bg-purple-600 hover:bg-purple-700' },
+  { name: 'Porsche', value: 'porsche', color: 'bg-yellow-600 hover:bg-yellow-700' },
+  { name: 'Rolls Royce', value: 'rolls-royce', color: 'bg-indigo-600 hover:bg-indigo-700' },
+  { name: 'Ferrari', value: 'ferrari', color: 'bg-red-700 hover:bg-red-800' },
+  { name: 'Lamborghini', value: 'lamborghini', color: 'bg-orange-700 hover:bg-orange-800' },
+  { name: 'Mercedes Benz', value: 'mercedes-benz', color: 'bg-slate-600 hover:bg-slate-700' },
+  { name: 'Pagani', value: 'pagani', color: 'bg-cyan-600 hover:bg-cyan-700' },
 ];
 
 const CategoryButtons = () => {

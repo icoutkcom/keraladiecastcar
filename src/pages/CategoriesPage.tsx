@@ -18,6 +18,12 @@ const categories = [
   { name: 'Audi', value: 'audi' },
   { name: 'Toyota', value: 'toyota' },
   { name: 'Honda', value: 'honda' },
+  { name: 'Porsche', value: 'porsche' },
+  { name: 'Rolls Royce', value: 'rolls-royce' },
+  { name: 'Ferrari', value: 'ferrari' },
+  { name: 'Lamborghini', value: 'lamborghini' },
+  { name: 'Mercedes Benz', value: 'mercedes-benz' },
+  { name: 'Pagani', value: 'pagani' },
 ];
 
 const CategoriesPage = () => {
