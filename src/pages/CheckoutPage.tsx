@@ -5,16 +5,10 @@ import Footer from '@/components/Footer';
 
 const CheckoutPage = () => {
   useEffect(() => {
-    // Load forms.app script dynamically
+    // Load Tally script dynamically
     const script = document.createElement('script');
-    script.src = 'https://forms.app/cdn/embed.js';
-    script.type = 'text/javascript';
+    script.src = 'https://tally.so/widgets/embed.js';
     script.async = true;
-    script.defer = true;
-    script.onload = () => {
-      // Initialize forms.app when script loads
-      new (window as any).formsapp('683c802303c9ef0002e2fb31', 'fullscreen', {'opacity':0}, 'https://4lvj7pow.forms.app');
-    };
 
     // Append to document head
     document.head.appendChild(script);
@@ -35,8 +29,17 @@ const CheckoutPage = () => {
         <div className="container mx-auto px-0">
           <div className="max-w-4xl mx-auto">
             <div className="glass-card rounded-xl p-6 py-0 px-0">
-              <div formsappId="683c802303c9ef0002e2fb31" className="w-full">
-                {/* Forms.app will be loaded here */}
+              <div className="w-full" style={{ height: '600px' }}>
+                <iframe 
+                  data-tally-src="https://tally.so/r/mBl5r7?transparentBackground=1" 
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0" 
+                  marginHeight={0} 
+                  marginWidth={0} 
+                  title="Checkout"
+                  className="border-0"
+                />
               </div>
             </div>
           </div>
