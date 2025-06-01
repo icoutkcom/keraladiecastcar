@@ -25,12 +25,10 @@ const CheckoutPage = () => {
   return <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Header onSearch={() => {}} cartItems={0} />
       
-      <div className="pt-24 pb-12">
-        <div className="container mx-auto px-4">
+      <div className="pt-24 pb-12 py-[61px]">
+        <div className="container mx-auto px-0">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-white mb-8 text-center">
-              Checkout
-            </h1>
+            
             
             <div className="glass-card rounded-xl p-6 py-0 px-0">
               <div id="jotform-container" className="w-full">
