@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Checkbox } from '@/components/ui/checkbox';
-
 interface FilterSidebarProps {
   categories: string[];
   selectedCategories: string[];
@@ -12,7 +10,6 @@ interface FilterSidebarProps {
   onPriceChange: (range: [number, number]) => void;
   onClearFilters: () => void;
 }
-
 const FilterSidebar = ({
   categories,
   selectedCategories,
@@ -21,62 +18,6 @@ const FilterSidebar = ({
   onPriceChange,
   onClearFilters
 }: FilterSidebarProps) => {
-  return (
-    <div className="w-80 glass-card rounded-xl p-6 h-fit sticky top-24">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-bold text-white">Filters</h2>
-        <Button
-          variant="ghost"
-          onClick={onClearFilters}
-          className="text-gray-400 hover:text-white"
-        >
-          Clear All
-        </Button>
-      </div>
-      
-      <div className="space-y-6">
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Categories</h3>
-          <div className="space-y-3">
-            {categories.map((category) => (
-              <div key={category} className="flex items-center space-x-3">
-                <Checkbox
-                  id={category}
-                  checked={selectedCategories.includes(category)}
-                  onCheckedChange={() => onCategoryChange(category)}
-                  className="border-white/30"
-                />
-                <label
-                  htmlFor={category}
-                  className="text-gray-300 hover:text-white transition-colors cursor-pointer capitalize"
-                >
-                  {category}
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Price Range</h3>
-          <div className="space-y-4">
-            <Slider
-              value={priceRange}
-              onValueChange={(value) => onPriceChange(value as [number, number])}
-              max={1000}
-              min={0}
-              step={10}
-              className="w-full"
-            />
-            <div className="flex justify-between text-gray-400">
-              <span>${priceRange[0]}</span>
-              <span>${priceRange[1]}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return;
 };
-
 export default FilterSidebar;
