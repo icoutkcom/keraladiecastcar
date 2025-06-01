@@ -1,8 +1,6 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
 const CheckoutPage = () => {
   useEffect(() => {
     // Load Jotform script dynamically
@@ -10,7 +8,7 @@ const CheckoutPage = () => {
     script.type = 'text/javascript';
     script.src = 'https://form.jotform.com/jsform/251514479689472';
     script.async = true;
-    
+
     // Append to the form container
     const formContainer = document.getElementById('jotform-container');
     if (formContainer) {
@@ -24,9 +22,7 @@ const CheckoutPage = () => {
       }
     };
   }, []);
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+  return <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Header onSearch={() => {}} cartItems={0} />
       
       <div className="pt-24 pb-12">
@@ -36,7 +32,7 @@ const CheckoutPage = () => {
               Checkout
             </h1>
             
-            <div className="glass-card rounded-xl p-6">
+            <div className="glass-card rounded-xl p-6 py-0 px-0">
               <div id="jotform-container" className="w-full">
                 {/* Jotform will be loaded here */}
               </div>
@@ -46,8 +42,6 @@ const CheckoutPage = () => {
       </div>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default CheckoutPage;
