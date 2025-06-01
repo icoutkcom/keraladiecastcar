@@ -33,6 +33,7 @@ const CategoriesPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(() => {
     const categoryParam = searchParams.get('category');
+    console.log('Initial category from URL:', categoryParam);
     return categoryParam || 'all';
   });
   const [cartItems, setCartItems] = useState(0);
@@ -40,26 +41,34 @@ const CategoriesPage = () => {
   // Update selected category when URL changes
   useEffect(() => {
     const categoryFromUrl = searchParams.get('category');
-    console.log('URL category parameter:', categoryFromUrl);
+    console.log('URL category parameter changed to:', categoryFromUrl);
+    console.log('Current selectedCategory state:', selectedCategory);
+    
     if (categoryFromUrl && categoryFromUrl !== selectedCategory) {
+      console.log('Updating selectedCategory from URL:', categoryFromUrl);
       setSelectedCategory(categoryFromUrl);
     } else if (!categoryFromUrl && selectedCategory !== 'all') {
+      console.log('No category in URL, setting to all');
       setSelectedCategory('all');
     }
-  }, [searchParams]);
+  }, [searchParams, selectedCategory]);
 
   const filteredProducts = useMemo(() => {
     console.log('Filtering products with category:', selectedCategory);
-    console.log('Total products:', products.length);
+    console.log('Search query:', searchQuery);
+    console.log('Total products available:', products.length);
     
     const filtered = products.filter(product => {
-      const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesSearch = searchQuery === '' || product.name.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
+      
+      console.log(`Product: ${product.name}, Category: ${product.category}, Matches: ${matchesSearch && matchesCategory}`);
+      
       return matchesSearch && matchesCategory;
     });
     
     console.log('Filtered products count:', filtered.length);
-    console.log('Sample filtered products:', filtered.slice(0, 3).map(p => ({ name: p.name, category: p.category })));
+    console.log('First 5 filtered products:', filtered.slice(0, 5).map(p => ({ name: p.name, category: p.category })));
     
     return filtered;
   }, [products, searchQuery, selectedCategory]);
@@ -73,16 +82,21 @@ const CategoriesPage = () => {
   };
 
   const handleSearch = (query: string) => {
+    console.log('Search query changed to:', query);
     setSearchQuery(query);
   };
 
   const handleCategoryChange = (category: string) => {
-    console.log('Changing category to:', category);
+    console.log('Category button clicked, changing to:', category);
     setSelectedCategory(category);
+    
+    // Update URL to reflect the category change
     if (category === 'all') {
       setSearchParams({});
+      console.log('URL cleared for all categories');
     } else {
       setSearchParams({ category });
+      console.log('URL updated with category:', category);
     }
   };
 
@@ -133,12 +147,12 @@ const CategoriesPage = () => {
           
           {filteredProducts.length > 0 ? (
             <>
-              <ProductGrid products={filteredProducts.slice(0, 50)} onAddToCart={handleAddToCart} />
+              <ProductGrid products={filteredProducts.slice(0, 100)} onAddToCart={handleAddToCart} />
               
-              {filteredProducts.length > 50 && (
+              {filteredProducts.length > 100 && (
                 <div className="mt-12 text-center">
                   <p className="text-gray-400 mb-4">
-                    Showing first 50 products. Use search or filters to narrow down results.
+                    Showing first 100 products. Use search or filters to narrow down results.
                   </p>
                 </div>
               )}
