@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -6,9 +5,10 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Truck, Shield, CreditCard, Star } from 'lucide-react';
-
 const ProductPage = () => {
-  const { id } = useParams();
+  const {
+    id
+  } = useParams();
   const navigate = useNavigate();
   const [selectedSize, setSelectedSize] = useState('1:18');
 
@@ -16,59 +16,37 @@ const ProductPage = () => {
   const product = {
     id: id || '1',
     name: 'Premium Diecast Sports Car Model',
-    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=600&fit=crop'
   };
-
-  const sizes = [
-    { scale: '1:18', price: 1499 },
-    { scale: '1:24', price: 999 },
-    { scale: '1:32', price: 499 },
-    { scale: '1:64', price: 299 },
-  ];
-
+  const sizes = [{
+    scale: '1:18',
+    price: 1499
+  }, {
+    scale: '1:24',
+    price: 999
+  }, {
+    scale: '1:32',
+    price: 499
+  }, {
+    scale: '1:64',
+    price: 299
+  }];
   const selectedPrice = sizes.find(size => size.scale === selectedSize)?.price || 1499;
-
-  const features = [
-    'Made of high-quality metal and fiber',
-    'Rollable wheels for authentic movement',
-    'Openable doors for detailed interior view',
-    'Functional bonnet/hood opening',
-    'Working headlights and side lights',
-    'Precision diecast construction',
-    'Premium quality finish'
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+  const features = ['Made of high-quality metal and fiber', 'Rollable wheels for authentic movement', 'Openable doors for detailed interior view', 'Functional bonnet/hood opening', 'Working headlights and side lights', 'Precision diecast construction', 'Premium quality finish'];
+  return <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Header onSearch={() => {}} cartItems={0} />
       
       <div className="pt-24 pb-12">
         <div className="container mx-auto px-4">
           {/* Back Button */}
-          <Button
-            variant="ghost"
-            onClick={() => navigate(-1)}
-            className="mb-6 text-white hover:bg-white/10"
-          >
+          <Button variant="ghost" onClick={() => navigate(-1)} className="mb-6 text-white hover:bg-white/10">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Products
           </Button>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Product Image */}
-            <div className="glass-card rounded-2xl p-6">
-              <div className="aspect-square overflow-hidden rounded-xl bg-gray-900/50">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=600&fit=crop';
-                  }}
-                />
-              </div>
-            </div>
+            
 
             {/* Product Details */}
             <div className="space-y-6">
@@ -76,9 +54,7 @@ const ProductPage = () => {
                 <h1 className="text-3xl font-bold text-white mb-2">{product.name}</h1>
                 <div className="flex items-center space-x-2 mb-4">
                   <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                   </div>
                   <span className="text-gray-400 text-sm">(Premium Quality)</span>
                 </div>
@@ -88,20 +64,10 @@ const ProductPage = () => {
               <div className="glass-card rounded-xl p-6">
                 <h3 className="text-lg font-semibold text-white mb-4">Select Size & Price</h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {sizes.map((size) => (
-                    <button
-                      key={size.scale}
-                      onClick={() => setSelectedSize(size.scale)}
-                      className={`p-3 rounded-lg border transition-all ${
-                        selectedSize === size.scale
-                          ? 'border-white bg-white/10 text-white'
-                          : 'border-gray-600 text-gray-400 hover:border-gray-400'
-                      }`}
-                    >
+                  {sizes.map(size => <button key={size.scale} onClick={() => setSelectedSize(size.scale)} className={`p-3 rounded-lg border transition-all ${selectedSize === size.scale ? 'border-white bg-white/10 text-white' : 'border-gray-600 text-gray-400 hover:border-gray-400'}`}>
                       <div className="font-semibold">{size.scale}</div>
                       <div className="text-sm">₹{size.price}</div>
-                    </button>
-                  ))}
+                    </button>)}
                 </div>
                 <div className="mt-4 text-center">
                   <span className="text-2xl font-bold text-white">₹{selectedPrice}</span>
@@ -118,12 +84,10 @@ const ProductPage = () => {
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-white mb-4">Product Features</h3>
                   <ul className="space-y-2">
-                    {features.map((feature, index) => (
-                      <li key={index} className="flex items-start text-gray-300 text-sm">
+                    {features.map((feature, index) => <li key={index} className="flex items-start text-gray-300 text-sm">
                         <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         {feature}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </CardContent>
               </Card>
@@ -172,8 +136,6 @@ const ProductPage = () => {
       </div>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ProductPage;
