@@ -11,19 +11,44 @@ interface GistProduct {
 
 export const importProductsFromGist = async (gistUrl: string): Promise<Product[]> => {
   try {
-    // Convert GitHub Gist URL to raw URL if needed
-    const rawUrl = gistUrl.includes('/raw/') 
-      ? gistUrl 
-      : gistUrl.replace('github.com', 'gist.githubusercontent.com') + '/raw';
+    // Extract gist ID from URL and construct raw URL
+    let rawUrl: string;
+    
+    if (gistUrl.includes('/raw/')) {
+      rawUrl = gistUrl;
+    } else {
+      // Extract gist ID from the URL
+      const gistIdMatch = gistUrl.match(/gist\.github\.com\/[^\/]+\/([a-f0-9]+)/);
+      if (!gistIdMatch) {
+        throw new Error('Invalid GitHub Gist URL format');
+      }
+      
+      const gistId = gistIdMatch[1];
+      rawUrl = `https://gist.githubusercontent.com/chiragshettybp/${gistId}/raw/`;
+    }
     
     console.log('Fetching products from:', rawUrl);
     
-    const response = await fetch(rawUrl);
+    const response = await fetch(rawUrl, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
+    
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
     }
     
-    const data = await response.json();
+    const text = await response.text();
+    console.log('Raw response:', text.substring(0, 200) + '...');
+    
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (parseError) {
+      throw new Error('Invalid JSON format in Gist');
+    }
     
     // Handle different data structures
     let products: GistProduct[] = [];
