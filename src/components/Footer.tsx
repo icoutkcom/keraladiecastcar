@@ -1,32 +1,29 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-black border-t border-white/10 text-white">
+  return <footer className="bg-black border-t border-white/10 text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white mb-4">TechStore</h3>
+            <h3 className="text-xl font-bold text-white mb-4">KERALA DIECAST CAR</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted destination for premium tech products. We deliver quality electronics 
               and exceptional customer service worldwide.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook size={20} />
+                
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
+                
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram size={20} />
+                
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Youtube size={20} />
+                
               </a>
             </div>
           </div>
@@ -56,23 +53,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Contact Info</h4>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <MapPin size={16} className="text-gray-400" />
-                <span className="text-gray-400 text-sm">123 Tech Street, Digital City, TC 12345</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-gray-400" />
-                <span className="text-gray-400 text-sm">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-gray-400" />
-                <span className="text-gray-400 text-sm">support@techstore.com</span>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
         {/* Bottom Bar */}
@@ -95,8 +76,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
