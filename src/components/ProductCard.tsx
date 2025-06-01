@@ -38,7 +38,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         </div>
         
         <div className="p-4">
-          <h3 className="font-semibold text-white text-lg line-clamp-2 group-hover:text-gray-200 transition-colors text-center">
+          <h3 className="font-bold text-white text-xl line-clamp-2 group-hover:text-gray-100 transition-colors text-center drop-shadow-lg">
             {truncateTitle(product.name)}
           </h3>
         </div>
