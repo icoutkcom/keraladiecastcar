@@ -6,6 +6,7 @@ import { AppSidebar } from '@/components/AppSidebar';
 import Index from '@/pages/Index';
 import ProductPage from '@/pages/ProductPage';
 import CategoriesPage from '@/pages/CategoriesPage';
+import CheckoutPage from '@/pages/CheckoutPage';
 import NotFound from '@/pages/NotFound';
 import ReturnRefundPolicy from '@/pages/ReturnRefundPolicy';
 import ShippingPolicy from '@/pages/ShippingPolicy';
@@ -25,6 +26,7 @@ function App() {
               <Route path="/" element={<Index />} />
               <Route path="/product/:id" element={<ProductPage />} />
               <Route path="/categories" element={<CategoriesPage />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/return-refund-policy" element={<ReturnRefundPolicy />} />
               <Route path="/shipping-policy" element={<ShippingPolicy />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
