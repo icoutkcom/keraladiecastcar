@@ -8,10 +8,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white mb-4">KERALA DIECAST CAR</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Your trusted destination for premium tech products. We deliver quality electronics 
-              and exceptional customer service worldwide.
-            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">Your trusted destination for premium diecast models and supercar models, top rated by quality.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 
