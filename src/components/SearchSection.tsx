@@ -16,7 +16,7 @@ const SearchSection = ({
   return <section className="py-12 px-4 bg-gradient-to-b from-black/50 to-transparent">
       <div className="container mx-auto max-w-4xl py-[9px] px-0">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 py-0 text-white/0">
             Find Your Perfect
             <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               {" "}Diecast Car
