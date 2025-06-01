@@ -4,6 +4,7 @@ import { Search, ShoppingCart, Menu, Truck, RotateCcw, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { SidebarTrigger } from '@/components/ui/sidebar';
 
 interface HeaderProps {
   onSearch: (query: string) => void;
@@ -37,40 +38,9 @@ const Header = ({ onSearch, cartItems }: HeaderProps) => {
       {/* Main header */}
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          {/* Left side - Menu and Logo */}
+          {/* Left side - Sidebar trigger and Logo */}
           <div className="flex items-center space-x-3">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[280px] sm:w-[350px]">
-                <nav className="flex flex-col space-y-4 mt-8">
-                  <a href="#" className="text-lg font-medium hover:text-gray-300 transition-colors">Home</a>
-                  <a href="#" className="text-lg font-medium hover:text-gray-300 transition-colors">Diecast Cars</a>
-                  <a href="#" className="text-lg font-medium hover:text-gray-300 transition-colors">Categories</a>
-                  <a href="#" className="text-lg font-medium hover:text-gray-300 transition-colors">New Arrivals</a>
-                  <a href="#" className="text-lg font-medium hover:text-gray-300 transition-colors">Sale</a>
-                  <a href="#" className="text-lg font-medium hover:text-gray-300 transition-colors">About</a>
-                  
-                  {/* Mobile info */}
-                  <div className="border-t border-gray-700 pt-4 mt-6">
-                    <div className="flex items-center space-x-2 text-sm text-gray-300 mb-2">
-                      <Truck className="h-4 w-4" />
-                      <span>3-7 Day Shipping</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-sm text-gray-300 mb-2">
-                      <RotateCcw className="h-4 w-4" />
-                      <span>Returns: Damage/Wrong Items Only</span>
-                    </div>
-                    <div className="text-sm text-gray-300">
-                      Free shipping on orders over ₹500
-                    </div>
-                  </div>
-                </nav>
-              </SheetContent>
-            </Sheet>
+            <SidebarTrigger />
             
             <h1 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Kerala Diecast Car
