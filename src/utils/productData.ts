@@ -1,4 +1,3 @@
-
 export interface Product {
   id: number;
   name: string;
@@ -7,474 +6,468 @@ export interface Product {
   category: string;
 }
 
-// Real diecast car products from your CSV
+// Real Land Rover products from your JSON data
 const realProducts = [
   {
     id: 1,
-    name: "1:18 Diecast Full Opening – Minichamps Dealer Edition BMW M3 G80 (Yellow)",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/Minichamps-BMW-M3-G80-118-Diecast-1-600x600.jpg",
-    price: 12500,
-    category: "bmw"
+    name: "1/18 Diecast LCD Land Rover Range Rover 2022 - White with gold roof",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5967671309502630007.jpg?v=1742562689",
+    price: 15500,
+    category: "land-rover"
   },
   {
     id: 2,
-    name: "1:18 Acrylic Display Case – Black Leather Base with Stitching",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/acrylic-display-case-black-leather-base-600x600.jpg",
-    price: 2500,
-    category: "accessories"
+    name: "1/18 Land Rover Defender 110 \"Camel Trophy Sabah-Malaysia\" Dirty Version 1993 Yellow Almost Real",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2024-11-20_15-19-59.jpg?v=1747653071",
+    price: 18500,
+    category: "land-rover"
   },
   {
     id: 3,
-    name: "1/18 BMW i7 2022 Diecast by Minichamps | Full Opening",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/BMW-i7-2022-Diecast-by-Minichamps-1-600x600.jpg",
-    price: 13500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Range Rover \"Camel Trophy Papua New Guinea\" Almost Real\" Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5782959016803158946.jpg?v=1747653078",
+    price: 19000,
+    category: "land-rover"
   },
   {
     id: 4,
-    name: "1/18 Diecast BMW Z8 by Kyosho – Full Opening",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/BMW-Z8-by-Kyosho-1-600x600.jpg",
-    price: 15000,
-    category: "bmw"
+    name: "1/18 Diecast LCD Land Rover Range Rover 2022 Gold",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5967671309502630015.jpg?v=1742562687",
+    price: 16000,
+    category: "land-rover"
   },
   {
     id: 5,
-    name: "1:18 Diecast (Doors Opening) – Minichamps BMW M3 E92 Coupe",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/Minichamps-BMW-M3-E92-Coupe-1-600x600.jpg",
-    price: 11500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Range Rover 1970 white Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/IMG-20250210_183411_636.jpg?v=1742565242",
+    price: 17500,
+    category: "land-rover"
   },
   {
     id: 6,
-    name: "1:18 Diecast (Doors Opening) – Minichamps BMW M3 E92 Coupe (Grey)",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/Minichamps-BMW-M3-E92-Coupe-Grey-1-600x600.jpg",
-    price: 11500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 2020 Green Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/top4-PhotoRoom.jpg?v=1742565820",
+    price: 14500,
+    category: "land-rover"
   },
   {
     id: 7,
-    name: "1/18 Diecast KK Scale BMW 540i E39 Sedan blue",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/KK-Scale-BMW-540i-E39-Sedan-blue-1-600x600.jpg",
-    price: 8500,
-    category: "bmw"
+    name: "LCD Land Rover Range Rover SV 2022 - 1/18 Diecast Full Opening, Black",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5810167149292012604.jpg?v=1742562218",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 8,
-    name: "1:18 Diecast – Minichamps BMW 2500 (1968)",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/Minichamps-BMW-2500-1968-1-600x600.jpg",
-    price: 14000,
-    category: "bmw"
+    name: "LCD Land Rover Range Rover - 1/18 Diecast Model, All Opening - Black",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-2245.jpg?v=1742563665",
+    price: 15000,
+    category: "land-rover"
   },
   {
     id: 9,
-    name: "1:18 Diecast – Minichamps BMW M4 DTM 2019 P. Eng (No. 25)",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/Minichamps-BMW-M4-DTM-2019-P.-Eng-No.-25-1-600x600.jpg",
-    price: 16500,
-    category: "bmw"
+    name: "Land Rover Range Rover Limited Edition by MotorHelix[1/18 Resin Silver]",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-17175_jpg.webp?v=1742563964",
+    price: 18000,
+    category: "land-rover"
   },
   {
     id: 10,
-    name: "1/18 Diecast Model - Minichamps BMW 2500 (1968) – Silver",
-    image: "https://keraladiecastcar.com/wp-content/uploads/2024/10/Minichamps-BMW-2500-1968-Silver-1-600x600.jpg",
-    price: 14000,
-    category: "bmw"
+    name: "1/18 Diecast  Bburago Land Rover - Range Rover Sport (Black) Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-15291-PhotoRoom.jpg?v=1742564165",
+    price: 8500,
+    category: "land-rover"
   },
   {
     id: 11,
-    name: "1/18 Resin Model – BMW M850i Gran Coupe xDrive M Performance | GT Spirit | Dark Red",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_6_2025-05-14_14-53-19.jpg?v=1747221226",
-    price: 16500,
-    category: "bmw"
+    name: "Land Rover Range Rover Carbon Fiber Key Fob Case (Model A) - Carbon Black",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1690479831-5.jpg?v=1742564643",
+    price: 1500,
+    category: "accessories"
   },
   {
     id: 12,
-    name: "1/18 BMW i7 2022 Diecast by Minichamps | Full Opening | Dealer Edition",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_1_2025-05-04_16-55-19.jpg?v=1746791558",
-    price: 14500,
-    category: "bmw"
+    name: "1/18 Resin Land Rover Range Rover Sunset Gold Matt by MotorHelix",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_10_2024-12-28_15-34-28.jpg?v=1742564907",
+    price: 17000,
+    category: "land-rover"
   },
   {
     id: 13,
-    name: "1/18 Resin GT Spirit BMW Alpina B7 Saloon - Blue / Beige Interior Limited Edition",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2025-04-28_16-34-55.jpg?v=1746791514",
-    price: 18000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Discovery Series 1 \"Camel Trophy Kalimantan 1996\" Dirt Version Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1679495197-2.jpg?v=1747653036",
+    price: 19500,
+    category: "land-rover"
   },
   {
     id: 14,
-    name: "1/18 Resin GT Spirit BMW Alpina B5 Saloon - Blue / Black Interior Limited Edition",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_3_2025-04-28_16-34-39.jpg?v=1746791512",
-    price: 17500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Range Rover 2020 Red by LCD",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/lcdrangeroverred1.jpg?v=1742566133",
+    price: 15500,
+    category: "land-rover"
   },
   {
     id: 15,
-    name: "1/18 Metal Diecast Full Opening Minichamps Dealer Edition BMW i7 (2022) - Black Metallic",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_12_2025-04-28_16-33-44.jpg?v=1746791500",
-    price: 15000,
-    category: "bmw"
+    name: "Almost Real Land Rover Defender 90 Camel Trophy Edition – 1/18 Diecast Model, All Opening, Yellow",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2024-10-26_22-18-40.jpg?v=1747652948",
+    price: 18500,
+    category: "land-rover"
   },
   {
     id: 16,
-    name: "1/18 Metal Diecast Model – Minichamps BMW XM 2023 in Yellow",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2025-04-28_16-32-54.jpg?v=1747652879",
-    price: 16000,
-    category: "bmw"
+    name: "1/18 diecast Almost real LAND ROVER Defender 90 CAMEL TROPHY BORNEO 1985 Yellow",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5782959016803159124.jpg?v=1747652955",
+    price: 19000,
+    category: "land-rover"
   },
   {
     id: 17,
-    name: "1:18 Acrylic Display Case – Black Leather Base with BMW Logo Print",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/1_18_Acrylic_Display_Case_Black_Leather_Base_with_BMW_Logo_Print.jpg?v=1744046765",
-    price: 3000,
-    category: "accessories"
+    name: "1/18 Diecast Model - Kyosho Land Rover Defender 90 in Antree Green",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5936002398210344408.jpg?v=1742562732",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 18,
-    name: "1:18 Diecast (Doors Opening) – Minichamps BMW M4 DTM 2019 #7 B. Spengler, BMW Team RMG – Matt Black Racing Decal (Limited 1002 pcs)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2025-03-17_16-15-57.jpg?v=1744046752",
-    price: 18500,
-    category: "bmw"
+    name: "1/18 Resin Model - Kyosho Land Rover Range Rover Sport SVR in Indus Silver",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5920502144706922054.jpg?v=1742562789",
+    price: 17500,
+    category: "land-rover"
   },
   {
     id: 19,
-    name: "1:18 Diecast (Doors Opening) – Minichamps BMW M3 DTM 2013 #7 A. Farfus, BMW Team RBM – Green Racing Decal (Limited 1002 pcs)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2025-03-17_16-15-45.jpg?v=1744046751",
+    name: "Top Speed (Dealer Edition) Land Rover Range Rover Sport - Fuji [ Resin| White | 1/18 ]",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-4504.jpg?v=1742563303",
     price: 18000,
-    category: "bmw"
+    category: "land-rover"
   },
   {
     id: 20,
-    name: "1:18 Diecast – Minichamps BMW M4 DTM 2019 P. Eng, BMW Team RMR #25 – Blue Racing Decal",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2025-03-17_16-15-09.jpg?v=1744046749",
-    price: 17000,
-    category: "bmw"
+    name: "1/18 Resin, Cult Scale Model Land Rover 88 Series III (1978) - Country Russet Brown",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-2296.jpg?v=1742563657",
+    price: 16000,
+    category: "land-rover"
   },
   {
     id: 21,
-    name: "1:18 Diecast Full Opening – Minichamps Dealer Edition BMW i8 – Crystal White",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2025-03-11_17-47-31.jpg?v=1744046748",
-    price: 15500,
-    category: "bmw"
+    name: "Cult Scale Model Land Rover 88 Series III (1978) - 1/18 Resin, Green",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-2288.jpg?v=1742563658",
+    price: 16000,
+    category: "land-rover"
   },
   {
     id: 22,
-    name: "1:18 Diecast Model – Minichamps Dealer Edition BMW 328 Roadster 1938 – White",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2025-02-22_15-36-10.jpg?v=1744046657",
-    price: 19000,
-    category: "bmw"
+    name: "1/18 Metal Diecast | Almost Real Land Rover Defender 90 (2023) -Green",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-2270.jpg?v=1742563661",
+    price: 14500,
+    category: "land-rover"
   },
   {
     id: 23,
-    name: "1:18 Metal Diecast – Minichamps BMW XM KITH – Frozen Techno Violet (Full Opening)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2025-02-22_15-35-44.jpg?v=1742561420",
-    price: 17500,
-    category: "bmw"
+    name: "Almost Real Land Rover Defender 110 (2023) - 1/18 Metal Diecast, Green",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-2262.jpg?v=1742563662",
+    price: 15000,
+    category: "land-rover"
   },
   {
     id: 24,
-    name: "1/18 Diecast Solido BMW M3 E36 Coupe 1990 in blue with black interior",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_7_2025-02-17_14-40-59.jpg?v=1742561477",
-    price: 9500,
-    category: "bmw"
+    name: "1/18 Diecast Metal CenturyDragon Land Rover Defender 110 - Grey Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-298-PhotoRoom.jpg?v=1742563902",
+    price: 13500,
+    category: "land-rover"
   },
   {
     id: 25,
-    name: "1/18 Diecast Solido BMW M3 E36 Coupe 1990 in Artic Silver",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_7_2025-02-17_14-40-49.jpg?v=1742561479",
-    price: 9500,
-    category: "bmw"
+    name: "1/18 Diecast LCD Land Rover Defender 90 Works V8 70th Edition Matte Black",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1700675559_6_-PhotoRoom.jpg-PhotoRoom.jpg?v=1742563980",
+    price: 17000,
+    category: "land-rover"
   },
   {
     id: 26,
-    name: "1/18 Diecast Solido BMW 635 CSI (E24) 1984 in Red (Doors Opening)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2025-02-17_14-39-59.jpg?v=1742561489",
-    price: 10000,
-    category: "bmw"
+    name: "LCD Land Rover Defender 90 Works V8 - 1/18 Diecast, 70th Edition Silver",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1700675126_3_-PhotoRoom.jpg-PhotoRoom.jpg?v=1742563982",
+    price: 17000,
+    category: "land-rover"
   },
   {
     id: 27,
-    name: "1:18 Metal Diecast - BMW M8 Competition Coupe 2020 by Minichamps",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_8_2025-01-20_16-07-52.jpg?v=1742561689",
-    price: 16500,
-    category: "bmw"
+    name: "1/18 Diecast AlmostReal Land Rover Range Rover 1970 Beige Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-13908-PhotoRoom.jpg?v=1742564342",
+    price: 17500,
+    category: "land-rover"
   },
   {
     id: 28,
-    name: "1/18 Resin – BMW Williams Jack Set by Minichamps",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2024-12-06_14-52-23.jpg?v=1742562034",
-    price: 8500,
-    category: "accessories"
+    name: "1/18 Diecast  Land Rover Defender 90 Blue by Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/s-l1600-PhotoRoom_b211250f-13a0-4185-843d-03e0e047058b.jpg?v=1742564625",
+    price: 14500,
+    category: "land-rover"
   },
   {
     id: 29,
-    name: "1/18 Resin – BMW Williams Tyre Change Set #1 by Minichamps",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2024-12-06_14-46-36.jpg?v=1742562036",
-    price: 9000,
-    category: "accessories"
+    name: "1/18 Diecast  Land Rover Defender 90 Silver by Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-15239-1-PhotoRoom-_1.jpg?v=1742564695",
+    price: 14500,
+    category: "land-rover"
   },
   {
     id: 30,
-    name: "1/18 Resin – BMW Williams Tyre Change Set #2 by Minichamps",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_4_2024-12-06_14-31-07.jpg?v=1742562037",
-    price: 9000,
-    category: "accessories"
+    name: "1/18 Diecast Land Rover Defender 90 Green Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1683117026-8.jpg?v=1742565078",
+    price: 14500,
+    category: "land-rover"
   },
   {
     id: 31,
-    name: "1/18 Resin – BMW Williams Refueller Set by Minichamps",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5_2024-12-06_14-30-53.jpg?v=1742562039",
-    price: 8500,
-    category: "accessories"
+    name: "1/18 Diecast Land Rover Defender 90 White Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1681392188-8.jpg?v=1742565167",
+    price: 14500,
+    category: "land-rover"
   },
   {
     id: 32,
-    name: "1/18 Metal Diecast – BMW i7 (2022) White Metallic by Minichamps",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2024-11-23_11-30-27.jpg?v=1742562055",
-    price: 14500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Range Rover \"Camel Trophy Sumatra 1981\" Yellow Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5773825841862656934.jpg?v=1747653035",
+    price: 19000,
+    category: "land-rover"
   },
   {
     id: 33,
-    name: "1/18 Diecast Solido BMW 2002 Tii in White (doors opening)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/6037393605267671308.jpg?v=1742562369",
-    price: 9000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Discovery Series 1 \"Camel Trophy Kalimantan 1996\" Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5782959016803158937.jpg?v=1747653052",
+    price: 19500,
+    category: "land-rover"
   },
   {
     id: 34,
-    name: "1/18 Diecast Solido BMW M3 E36 Coupe 1990 Blue (Doors Opening)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/6037393605267671271.jpg?v=1742562372",
-    price: 9500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 Heritage Green Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1673530964-4.jpg?v=1742565814",
+    price: 15000,
+    category: "land-rover"
   },
   {
     id: 35,
-    name: "1/18 Resin Model - GT Spirit BMW M4 CSL in Black (Limited Edition)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/6032816574584439549.jpg?v=1742562412",
-    price: 17500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 White Century Dragon Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1673533213.jpg?v=1742565815",
+    price: 13500,
+    category: "land-rover"
   },
   {
     id: 36,
-    name: "1/18 Diecast Model - Minichamps BMW 2500 (1968) in Blue Metallic, Limited to 504 Pieces",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5936002398210344335.jpg?v=1742562756",
-    price: 18000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 Orange Century Dragon Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1673533028.jpg?v=1742565816",
+    price: 13500,
+    category: "land-rover"
   },
   {
     id: 37,
-    name: "1/18 Resin Model - GT Spirit BMW Alpina B3 Sedan Dark Green",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5843968116709769852.jpg?v=1742563145",
-    price: 16500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 Dark Green Century Dragon Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1673530950-5.jpg?v=1742565817",
+    price: 13500,
+    category: "land-rover"
   },
   {
     id: 38,
-    name: "1/18 GT Spirit BMW M2 (G87) Resin Model - Blue | Limited Edition",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-4136.jpg?v=1742563372",
-    price: 16000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Range Rover Evoque White by GTA",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1673530950-2.jpg?v=1742565819",
+    price: 12000,
+    category: "land-rover"
   },
   {
     id: 39,
-    name: "Minichamps BMW M2 CS 2020 [1/18 Resin Blue]",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-3622.jpg?v=1742563460",
-    price: 15500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 90 Chrome Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1673530927-9.jpg?v=1742565821",
+    price: 16000,
+    category: "land-rover"
   },
   {
     id: 40,
-    name: "BMW FW25 WilliamsF1 N. Rosberg 2004 by Minichamps [1/18 Diecast metal]",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-3313.jpg?v=1742563507",
-    price: 19500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 Black Century Dragon Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1673526174-8.jpg?v=1742565853",
+    price: 13500,
+    category: "land-rover"
   },
   {
     id: 41,
-    name: "BMW AC Schnitzer ACS3 Sport 2.5 Limited Editon by Otto Mobile [ 1/18 Blue Resin]",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-3070.jpg?v=1742563546",
-    price: 17000,
-    category: "bmw"
+    name: "1/18 Resin Land Rover Range Rover Silver by LS",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/Rangeroveroldsilver1.jpg?v=1742566005",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 42,
-    name: "Davis & Giovanni BMW M4 LBWK - 1/18 Resin Model, Not Opening - Chrome Silver",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-2767.jpg?v=1742563597",
-    price: 18500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 Blue Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/defenderblue901.jpg?v=1742566096",
+    price: 15000,
+    category: "land-rover"
   },
   {
     id: 43,
-    name: "Minichamps BMW M3 DTM - 1/18 Diecast Model, Partially Opening - White Blue",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-2222.jpg?v=1742563668",
-    price: 16500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 White Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/ardefenderwhite1.jpg?v=1742566348",
+    price: 15000,
+    category: "land-rover"
   },
   {
     id: 44,
-    name: "1/18 metal diecast full opening Kyosho BMW 5 Series Black Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-1277-PhotoRoom.jpg?v=1742563811",
-    price: 13500,
-    category: "bmw"
+    name: "1/18 Land Rover Defender 110 Black Almost Real",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/6041808054258877236.jpg?v=1742566350",
+    price: 15000,
+    category: "land-rover"
   },
   {
     id: 45,
-    name: "1/18 Solido BMW E46 CSL (2003) - Metal Diecast, Sleek Black",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-580_1_-PhotoRoom.jpg?v=1742563871",
-    price: 11000,
-    category: "bmw"
+    name: "1/18 Diecast Miniature Land Rover LR Series III 109 Pickup Blue Eagle Collectibles Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/eaglelandrover.jpg?v=1742566440",
+    price: 14000,
+    category: "land-rover"
   },
   {
     id: 46,
-    name: "GT Spirit BMW M2 CS (F87) - 1/18 Resin Model, Striking Blue",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-48-PhotoRoom.jpg?v=1742563945",
-    price: 15000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 90 Adventure 2007 Yellow Kyosho Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/WhatsAppImage2022-12-28at15.41.00.jpg?v=1747653081",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 47,
-    name: "Otto Mobile BMW ALPINA B7 Turbo Coupe-1/18 Resin Model,Limited Edition,Blue",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-1002020340470-17.jpg?v=1742563948",
-    price: 18000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Range Rover \"The British Trans-Americas Expedition\" 1971-1972 Blue Almost Real",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/WhatsAppImage2022-12-28at15.40.18.jpg?v=1742566648",
+    price: 19500,
+    category: "land-rover"
   },
   {
     id: 48,
-    name: "Minichamps BMW M3 (2020) - 1/18 Resin Model, Blue Metallic",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-17203-PhotoRoom.jpg?v=1742563961",
-    price: 14500,
-    category: "bmw"
+    name: "1/18 Diecast Full Opening - LCD Land Rover Range Rover SV 2022 (Red)",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5778222771682263797.jpg?v=1742562316",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 49,
-    name: "Minichamps BMW Z1 - Purple (1988, 1/18 Scale)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1700575472_7_-PhotoRoom.jpg?v=1742564023",
-    price: 16000,
-    category: "bmw"
+    name: "1/18 GT Autos Land Rover Range Rover 2013 in classic black",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/5974106098224973350.jpg?v=1742562632",
+    price: 14000,
+    category: "land-rover"
   },
   {
     id: 50,
-    name: "1/18 Resin OTTO BMW M1 Gr B#3 - White Miniature Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-16036-PhotoRoom.jpg?v=1742564080",
+    name: "1/18 Diecast  Land Rover Range Rover Classic Police White 1970 by Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/range-rover-police-almost-real-dubai-PhotoRoom.jpg?v=1742564624",
     price: 17500,
-    category: "bmw"
+    category: "land-rover"
   },
   {
     id: 51,
-    name: "1/18 Resin BMW M5 CS GT Spirit Scale Model - Collectors Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_5852752321262503067_y.jpg?v=1742564136",
-    price: 17000,
-    category: "bmw"
+    name: "Land Rover Range Rover Carbon Fiber Key Fob Case (Model B) - Ruby Red (Glass Fiber)",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1690480517-5.jpg?v=1747135444",
+    price: 1500,
+    category: "accessories"
   },
   {
     id: 52,
-    name: "1/18 Modelcar group BMW ALPINA C2 2.7 WHITE Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-14841-PhotoRoom.jpg?v=1742564210",
-    price: 15500,
-    category: "bmw"
+    name: "1/18 Land Rover Range Rover Autobiography white 2022 White By Motor Helix",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1689870900-3.jpg?v=1742564706",
+    price: 17000,
+    category: "land-rover"
   },
   {
     id: 53,
-    name: "1/18 Modelcar group BMW 7-series (E32) BLUE Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-14838-PhotoRoom_4def02b9-c7dd-4de1-a78f-d54eac5c5845.jpg?v=1742564211",
-    price: 14000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 90 Heritage Green Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo_2_2024-10-26_22-19-27.jpg?v=1742565038",
+    price: 14500,
+    category: "land-rover"
   },
   {
     id: 54,
-    name: "1/18 Solido BMW M3 E30 BLUE Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-14764-PhotoRoom.jpg?v=1742564217",
-    price: 10500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 \"Camel Trophy Sabah-Malaysia\" 1993 Yellow Almost Real Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1681388473-2.jpg?v=1747653032",
+    price: 18500,
+    category: "land-rover"
   },
   {
     id: 55,
-    name: "1/18 KK SCALE BMW 528i E39 SEDAN BLACK Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1698087126_2_-PhotoRoom.jpg?v=1742564218",
-    price: 8500,
-    category: "bmw"
+    name: "1/18 Resin Land Rover Range Rover White Model Car by MotorHelix",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1677428093.jpg?v=1742565415",
+    price: 17000,
+    category: "land-rover"
   },
   {
     id: 56,
-    name: "KARL FRIEDRICH RAPP BMW 1892-1962 Figure - Action Figure by SF",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-14704-PhotoRoom.jpg?v=1742564229",
-    price: 2500,
-    category: "accessories"
+    name: "1/18 Diecast Land Rover Range Rover 2Doors Green Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1674748985.jpg?v=1742565482",
+    price: 17500,
+    category: "land-rover"
   },
   {
     id: 57,
-    name: "1/18 GT Spirit BMW M4 CSL (G82) Coupe Grey Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/IMG_9651.heic?v=1742564253",
-    price: 17500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 90 Olive Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/photo1676895807-9.jpg?v=1742565489",
+    price: 14500,
+    category: "land-rover"
   },
   {
     id: 58,
-    name: "1/18 GLM BMW M4 Humans G82 Louisiana WBK Lizard Grey",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-14279-PhotoRoom.jpg?v=1742564265",
-    price: 18000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Range Rover 2 Doors 1970 Blue Almost Real",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/IMG-20250210_183806_091.jpg?v=1742565822",
+    price: 17500,
+    category: "land-rover"
   },
   {
     id: 59,
-    name: "1/18 GT Spirit BMW M4 Competition (G82) M Performance Green Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-13863-PhotoRoom.jpg?v=1742564345",
-    price: 17000,
-    category: "bmw"
+    name: "1/18 Resin Land Rover Range Rover Blue by LS",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/roverroverblueold1.jpg?v=1742566002",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 60,
-    name: "1/18 Diecast Solido BMW M3 E46 STREETFIGHTER WHITE 2000 Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-13308-PhotoRoom.jpg?v=1742564374",
-    price: 11500,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 90 Black Kyosho Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/defender90oldblack1.jpg?v=1742566098",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 61,
-    name: "1/18 Diecast BMW M3 E46 GOLD 2000 Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-13360-PhotoRoom.jpg?v=1742564386",
-    price: 12000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Defender 110 Silver Almost Real Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/ardefendersilver1.jpg?v=1742566349",
+    price: 15000,
+    category: "land-rover"
   },
   {
     id: 62,
-    name: "1/18 Diecast BMW M3 E30 Blue Blue Solido Scale Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/msg-961503572-12423-PhotoRoom.jpg?v=1742564432",
-    price: 10500,
-    category: "bmw"
+    name: "1/18 Diecast Miniature Land Rover Range Rover Classic Vogue CULT Silver Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/RRgrey1.jpg?v=1742566500",
+    price: 16000,
+    category: "land-rover"
   },
   {
     id: 63,
-    name: "1/18 Diecast BMW M3 E36 Coupe street fighter Red by Solido Model Car",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1691770537_13_-PhotoRoom.jpg?v=1742564549",
-    price: 10000,
-    category: "bmw"
+    name: "1/18 Diecast Land Rover Range Rover Sport SVR Blue Kyosho Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/6032816574584439541.jpg?v=1742566534",
+    price: 17500,
+    category: "land-rover"
   },
   {
     id: 64,
-    name: "BMW Carbon Fiber Key Fob Case (Model C)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1690482813-4.jpg?v=1742564634",
-    price: 1500,
-    category: "accessories"
+    name: "1/18 Land Rover Range Rover SV Autobiography Dynamic 2017 White LCD-Model",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/RR2.jpg?v=1742566583",
+    price: 16500,
+    category: "land-rover"
   },
   {
     id: 65,
-    name: "BMW Carbon Fiber Key Fob Case (Model B)",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1690477166-3.jpg?v=1742564647",
-    price: 1500,
-    category: "accessories"
-  },
-  {
-    id: 66,
-    name: "1/18 Resin BMW M5 E34 Yellow Model car by Otto",
-    image: "https://cdn.shopify.com/s/files/1/1786/0103/files/photo1685182507-7.jpg?v=1747653022",
+    name: "1/18 Diecast Land Rover Defender 90  Grey Kyosho Scale Model Car",
+    image: "https://cdn.shopify.com/s/files/1/1786/0103/products/WhatsAppImage2022-12-28at15.39.04.jpg?v=1742566649",
     price: 16500,
-    category: "bmw"
+    category: "land-rover"
   }
 ];
 
 // Categories for diecast cars
 export const categories = [
+  'land-rover',
   'bmw',
   'mercedes',
   'audi',
@@ -490,10 +483,10 @@ export const categories = [
 // Generate additional products to fill the catalog while keeping the real ones
 const generateAdditionalProducts = (startId: number, count: number): Product[] => {
   const additionalProducts: Product[] = [];
-  const brands = ['BMW', 'Mercedes', 'Audi', 'Porsche', 'Ferrari', 'Lamborghini'];
-  const models = ['M3', 'M4', 'M5', 'Z4', 'X5', 'i8', 'Series', 'Coupe', 'Sedan', 'Convertible'];
+  const brands = ['Land Rover', 'BMW', 'Mercedes', 'Audi', 'Porsche', 'Ferrari'];
+  const models = ['Defender', 'Range Rover', 'Discovery', 'Evoque', 'Sport', 'Classic'];
   const scales = ['1:18', '1:24', '1:43'];
-  const manufacturers = ['Minichamps', 'Kyosho', 'AUTOart', 'Norev', 'Spark'];
+  const manufacturers = ['Almost Real', 'LCD', 'Kyosho', 'AUTOart', 'Minichamps'];
   
   // Fallback images for additional products
   const fallbackImages = [
@@ -515,7 +508,7 @@ const generateAdditionalProducts = (startId: number, count: number): Product[] =
     const name = `${scale} Diecast ${manufacturer} ${brand} ${model} (${year})`;
     const image = fallbackImages[Math.floor(Math.random() * fallbackImages.length)];
     const price = Math.floor(Math.random() * 15000) + 5000; // ₹5000 - ₹20000
-    const category = brand.toLowerCase();
+    const category = brand.toLowerCase().replace(' ', '-');
     
     additionalProducts.push({
       id,
