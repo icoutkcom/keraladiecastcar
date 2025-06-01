@@ -31,22 +31,37 @@ const CategoriesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [products] = useState(() => generateProducts(2000));
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'all');
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    const categoryParam = searchParams.get('category');
+    return categoryParam || 'all';
+  });
   const [cartItems, setCartItems] = useState(0);
 
+  // Update selected category when URL changes
   useEffect(() => {
     const categoryFromUrl = searchParams.get('category');
+    console.log('URL category parameter:', categoryFromUrl);
     if (categoryFromUrl && categoryFromUrl !== selectedCategory) {
       setSelectedCategory(categoryFromUrl);
+    } else if (!categoryFromUrl && selectedCategory !== 'all') {
+      setSelectedCategory('all');
     }
-  }, [searchParams, selectedCategory]);
+  }, [searchParams]);
 
   const filteredProducts = useMemo(() => {
-    return products.filter(product => {
+    console.log('Filtering products with category:', selectedCategory);
+    console.log('Total products:', products.length);
+    
+    const filtered = products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
+    
+    console.log('Filtered products count:', filtered.length);
+    console.log('Sample filtered products:', filtered.slice(0, 3).map(p => ({ name: p.name, category: p.category })));
+    
+    return filtered;
   }, [products, searchQuery, selectedCategory]);
 
   const handleAddToCart = (product: Product) => {
@@ -62,6 +77,7 @@ const CategoriesPage = () => {
   };
 
   const handleCategoryChange = (category: string) => {
+    console.log('Changing category to:', category);
     setSelectedCategory(category);
     if (category === 'all') {
       setSearchParams({});
