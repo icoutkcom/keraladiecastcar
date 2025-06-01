@@ -15,7 +15,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
-  const truncateTitle = (title: string, maxWords: number = 5) => {
+  const truncateTitle = (title: string, maxWords: number = 8) => {
     const words = title.split(' ');
     if (words.length <= maxWords) return title;
     return words.slice(0, maxWords).join(' ') + '...';
@@ -38,7 +38,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         </div>
         
         <div className="p-4">
-          <h3 className="font-bold text-white text-xl line-clamp-2 group-hover:text-gray-100 transition-colors text-center drop-shadow-lg">
+          <h3 className="font-semibold text-white text-base line-clamp-3 group-hover:text-gray-100 transition-colors text-center drop-shadow-lg">
             {truncateTitle(product.name)}
           </h3>
         </div>
