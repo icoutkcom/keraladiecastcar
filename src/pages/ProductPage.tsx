@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Truck, Shield, CreditCard, Star, Users, Award, CheckCircle, Ruler } from 'lucide-react';
+
 const ProductPage = () => {
   const {
     id
@@ -76,7 +77,7 @@ const ProductPage = () => {
     description: "SSL encrypted checkout"
   }];
   const handleAddToCart = () => {
-    window.open('https://wa.me/qr/ZSKPUHIUU5JKJ1', '_blank');
+    navigate('/checkout');
   };
   return <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Header onSearch={() => {}} cartItems={0} />
