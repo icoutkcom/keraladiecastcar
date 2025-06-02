@@ -77,7 +77,7 @@ const ProductPage = () => {
     description: "SSL encrypted checkout"
   }];
   const handleAddToCart = () => {
-    navigate('/checkout');
+    window.open('https://tally.so/r/mBl5r7', '_blank');
   };
   return <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Header onSearch={() => {}} cartItems={0} />
