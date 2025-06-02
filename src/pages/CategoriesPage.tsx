@@ -133,7 +133,7 @@ const CategoriesPage = () => {
                   {selectedCategory === 'all' ? 'All Categories' : `${selectedCategoryName} Collection`}
                 </h1>
                 {isTopSellingCategory && (
-                  <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 text-sm font-semibold flex items-center gap-1">
+                  <Badge className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1 text-sm font-semibold flex items-center gap-1">
                     <TrendingUp className="h-3 w-3" />
                     TOP SELLING
                   </Badge>
@@ -203,7 +203,7 @@ const CategoriesPage = () => {
                 >
                   {category.name}
                   {topSellingCategories.includes(category.value) && (
-                    <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 py-0.5 rounded-full">
+                    <Badge className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs px-1 py-0.5 rounded-full">
                       <TrendingUp className="h-2 w-2" />
                     </Badge>
                   )}
