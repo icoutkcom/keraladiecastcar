@@ -138,7 +138,7 @@ const ProductPage = () => {
               {/* Shipping & Policies */}
               <div className="grid grid-cols-3 gap-3">
                 <Card className="glass-card border-white/10">
-                  <CardContent className="p-4 text-center">
+                  <CardContent className="p-4 text-center px-[6px]">
                     <CreditCard className="w-6 h-6 text-blue-400 mx-auto mb-2" />
                     <div className="text-white font-semibold text-sm">Prepaid Only</div>
                     <div className="text-gray-400 text-xs">Safe payments</div>
@@ -146,7 +146,7 @@ const ProductPage = () => {
                 </Card>
 
                 <Card className="glass-card border-white/10">
-                  <CardContent className="p-4 text-center">
+                  <CardContent className="p-4 text-center px-[6px]">
                     <Truck className="w-6 h-6 text-green-400 mx-auto mb-2" />
                     <div className="text-white font-semibold text-sm">3-7 Days</div>
                     <div className="text-gray-400 text-xs">Fast shipping</div>
@@ -154,7 +154,7 @@ const ProductPage = () => {
                 </Card>
 
                 <Card className="glass-card border-white/10">
-                  <CardContent className="p-4 text-center">
+                  <CardContent className="p-4 text-center px-[6px]">
                     <Shield className="w-6 h-6 text-red-400 mx-auto mb-2" />
                     <div className="text-white font-semibold text-sm">Returns</div>
                     <div className="text-gray-400 text-xs">If damaged</div>
@@ -167,7 +167,7 @@ const ProductPage = () => {
           {/* Product Features */}
           <div className="mt-12">
             <Card className="glass-card border-white/10 rounded-2xl">
-              <CardContent className="p-8 px-[5px] py-[15px]">
+              <CardContent className="p-8 px-[5px] py-[13px]">
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">Premium Features</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-0">
                   {features.map((feature, index) => <div key={index} className="flex items-center p-3 rounded-lg bg-white/5 border border-white/10">
