@@ -95,99 +95,104 @@ const ProductPage = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Product Image */}
-            
+            <div className="relative">
+              <div className="glass-card rounded-2xl overflow-hidden border-white/10 p-6">
+                <img 
+                  src={product.image} 
+                  alt={product.name}
+                  className="w-full h-96 object-cover rounded-xl"
+                />
+                <div className="absolute top-8 left-8">
+                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Premium Quality
+                  </span>
+                </div>
+              </div>
+            </div>
 
             {/* Product Details */}
             <div className="space-y-6">
-              <div>
-                
+              {/* Product Header */}
+              <div className="glass-card rounded-2xl p-6 border-white/10">
+                <h1 className="text-2xl lg:text-3xl font-bold text-white mb-3">{product.name}</h1>
                 <div className="flex items-center space-x-2 mb-4">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                   </div>
                   <span className="text-gray-400 text-sm">(Premium Quality)</span>
                 </div>
+                <div className="text-3xl font-bold text-white">₹{selectedPrice}</div>
               </div>
 
               {/* Size Selection */}
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-white mb-4">Select Size & Price</h3>
+              <div className="glass-card rounded-2xl p-6 border-white/10">
+                <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                  <Ruler className="w-5 h-5 mr-2 text-blue-400" />
+                  Select Size & Scale
+                </h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {sizes.map(size => <button key={size.scale} onClick={() => setSelectedSize(size.scale)} className={`p-3 rounded-lg border transition-all ${selectedSize === size.scale ? 'border-white bg-white/10 text-white' : 'border-gray-600 text-gray-400 hover:border-gray-400'}`}>
-                      <div className="font-semibold">{size.scale}</div>
-                      <div className="text-sm">₹{size.price}</div>
+                  {sizes.map(size => <button key={size.scale} onClick={() => setSelectedSize(size.scale)} className={`p-4 rounded-xl border transition-all duration-300 ${selectedSize === size.scale ? 'border-blue-400 bg-gradient-to-r from-blue-500/20 to-purple-600/20 text-white transform scale-105' : 'border-gray-600 text-gray-400 hover:border-gray-400 hover:bg-white/5'}`}>
+                      <div className="font-bold text-lg">{size.scale}</div>
+                      <div className="text-sm opacity-80">₹{size.price}</div>
                     </button>)}
-                </div>
-                <div className="mt-4 text-center">
-                  <span className="text-2xl font-bold text-white">₹{selectedPrice}</span>
                 </div>
               </div>
 
               {/* Purchase Button */}
               <Button 
                 onClick={handleAddToCart}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 Add to Cart - ₹{selectedPrice}
               </Button>
 
-              {/* Product Features */}
-              <Card className="glass-card border-white/10">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">Product Features</h3>
-                  <ul className="space-y-2">
-                    {features.map((feature, index) => <li key={index} className="flex items-start text-gray-300 text-sm">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        {feature}
-                      </li>)}
-                  </ul>
-                </CardContent>
-              </Card>
-
               {/* Shipping & Policies */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-3">
                 <Card className="glass-card border-white/10">
                   <CardContent className="p-4 text-center">
                     <CreditCard className="w-6 h-6 text-blue-400 mx-auto mb-2" />
                     <div className="text-white font-semibold text-sm">Prepaid Only</div>
-                    <div className="text-gray-400 text-xs">To avoid fake orders</div>
+                    <div className="text-gray-400 text-xs">Safe payments</div>
                   </CardContent>
                 </Card>
 
                 <Card className="glass-card border-white/10">
                   <CardContent className="p-4 text-center">
                     <Truck className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">3-7 Day Shipping</div>
-                    <div className="text-gray-400 text-xs">Fast delivery</div>
+                    <div className="text-white font-semibold text-sm">3-7 Days</div>
+                    <div className="text-gray-400 text-xs">Fast shipping</div>
                   </CardContent>
                 </Card>
 
                 <Card className="glass-card border-white/10">
                   <CardContent className="p-4 text-center">
                     <Shield className="w-6 h-6 text-red-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Returns Policy</div>
-                    <div className="text-gray-400 text-xs">Damage/Wrong items only</div>
+                    <div className="text-white font-semibold text-sm">Returns</div>
+                    <div className="text-gray-400 text-xs">If damaged</div>
                   </CardContent>
                 </Card>
               </div>
-
-              {/* Additional Info */}
-              <Card className="glass-card border-white/10">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-white mb-3">About This Model</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    This premium diecast model is crafted with precision and quality. Made from durable metal and fiber materials, 
-                    it features authentic details including rollable wheels, openable doors and bonnet, working headlights and side lights. 
-                    Each model is carefully constructed to provide the most realistic and detailed representation of the original vehicle.
-                  </p>
-                </CardContent>
-              </Card>
             </div>
+          </div>
+
+          {/* Product Features */}
+          <div className="mt-12">
+            <Card className="glass-card border-white/10 rounded-2xl">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">Premium Features</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {features.map((feature, index) => <div key={index} className="flex items-center p-3 rounded-lg bg-white/5 border border-white/10">
+                      <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mr-4 flex-shrink-0"></div>
+                      <span className="text-gray-300 text-sm">{feature}</span>
+                    </div>)}
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Understanding Diecast Scale Section */}
           <div className="mt-16">
-            <Card className="glass-card border-white/10 max-w-4xl mx-auto">
+            <Card className="glass-card border-white/10 max-w-4xl mx-auto rounded-2xl">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <Ruler className="w-6 h-6 text-blue-400 mr-3" />
