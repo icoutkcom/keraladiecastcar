@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Truck, Shield, CreditCard, Star, Users, Award, CheckCircle, Ruler } from 'lucide-react';
-
 const ProductPage = () => {
   const {
     id
@@ -93,24 +92,15 @@ const ProductPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-0">
             {/* Product Image */}
             <div className="relative">
-              <img src={product.image} alt={product.name} className="w-full rounded-2xl object-cover aspect-square" style={{
-                objectFit: 'contain'
-              }} />
+              
             </div>
 
             {/* Product Details */}
             <div className="space-y-6">
               {/* Product Header */}
               <div className="glass-card rounded-2xl p-6 border-white/10 py-[9px]">
-                <h2 className="text-2xl font-bold text-white">{product.name}</h2>
-                <div className="flex items-center text-sm text-gray-400 mt-2">
-                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
-                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
-                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
-                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
-                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
-                  (5.0) | 1245+ ratings
-                </div>
+                
+                
                 <div className="text-3xl font-bold text-white">₹{selectedPrice}</div>
               </div>
 
@@ -237,18 +227,7 @@ const ProductPage = () => {
           </div>
 
           {/* Trust Indicators Section */}
-          <div className="mt-16">
-            <h2 className="font-bold text-white text-center mb-8 text-2xl">Why Choose Us?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {trustIndicators.map((indicator, index) => <Card key={index} className="glass-card border-white/10">
-                  <CardContent className="p-6 text-center">
-                    {indicator.icon}
-                    <h3 className="text-lg font-semibold text-white mt-3 mb-1">{indicator.title}</h3>
-                    <p className="text-gray-400 text-sm">{indicator.description}</p>
-                  </CardContent>
-                </Card>)}
-            </div>
-          </div>
+          
 
           {/* Customer Reviews Section */}
           <div className="mt-16">
