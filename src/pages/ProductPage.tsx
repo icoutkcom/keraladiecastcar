@@ -60,7 +60,7 @@ const ProductPage = () => {
     verified: true
   }];
   const trustIndicators = [{
-    icon: <Users className="w-6 h-6 text-blue-400" />,
+    icon: <Users className="w-6 h-6 text-[#017aff]" />,
     title: "50,000+ Happy Customers",
     description: "Trusted by collectors nationwide"
   }, {
@@ -72,7 +72,7 @@ const ProductPage = () => {
     title: "100% Authentic Products",
     description: "Original licensed merchandise"
   }, {
-    icon: <Shield className="w-6 h-6 text-purple-400" />,
+    icon: <Shield className="w-6 h-6 text-[#017aff]" />,
     title: "Secure Payments",
     description: "SSL encrypted checkout"
   }];
@@ -93,26 +93,35 @@ const ProductPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-0">
             {/* Product Image */}
             <div className="relative">
-              
+              <img src={product.image} alt={product.name} className="w-full rounded-2xl object-cover aspect-square" style={{
+                objectFit: 'contain'
+              }} />
             </div>
 
             {/* Product Details */}
             <div className="space-y-6">
               {/* Product Header */}
               <div className="glass-card rounded-2xl p-6 border-white/10 py-[9px]">
-                
-                
+                <h2 className="text-2xl font-bold text-white">{product.name}</h2>
+                <div className="flex items-center text-sm text-gray-400 mt-2">
+                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
+                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
+                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
+                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
+                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
+                  (5.0) | 1245+ ratings
+                </div>
                 <div className="text-3xl font-bold text-white">₹{selectedPrice}</div>
               </div>
 
               {/* Size Selection */}
               <div className="glass-card rounded-2xl p-6 border-white/10 px-[11px] py-[12px]">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                  <Ruler className="w-5 h-5 mr-2 text-blue-400" />
+                  <Ruler className="w-5 h-5 mr-2 text-[#017aff]" />
                   Select Size & Scale
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {sizes.map(size => <button key={size.scale} onClick={() => setSelectedSize(size.scale)} className={`p-4 rounded-xl border transition-all duration-300 ${selectedSize === size.scale ? 'border-blue-400 bg-gradient-to-r from-blue-500/20 to-purple-600/20 text-white transform scale-105' : 'border-gray-600 text-gray-400 hover:border-gray-400 hover:bg-white/5'}`}>
+                  {sizes.map(size => <button key={size.scale} onClick={() => setSelectedSize(size.scale)} className={`p-4 rounded-xl border transition-all duration-300 ${selectedSize === size.scale ? 'border-[#017aff] bg-[#017aff]/20 text-white transform scale-105' : 'border-gray-600 text-gray-400 hover:border-gray-400 hover:bg-white/5'}`}>
                       <div className="font-bold text-lg">{size.scale}</div>
                       <div className="text-sm opacity-80 bg-black/0">₹{size.price}</div>
                     </button>)}
@@ -120,7 +129,7 @@ const ProductPage = () => {
               </div>
 
               {/* Purchase Button */}
-              <Button onClick={handleAddToCart} className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
+              <Button onClick={handleAddToCart} className="w-full bg-[#017aff] hover:bg-[#017aff]/90 text-white font-bold py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
                 Add to Cart - ₹{selectedPrice}
               </Button>
 
@@ -128,7 +137,7 @@ const ProductPage = () => {
               <div className="grid grid-cols-3 gap-3">
                 <Card className="glass-card border-white/10">
                   <CardContent className="p-4 text-center px-[6px]">
-                    <CreditCard className="w-6 h-6 text-blue-400 mx-auto mb-2" />
+                    <CreditCard className="w-6 h-6 text-[#017aff] mx-auto mb-2" />
                     <div className="text-white font-semibold text-sm">Prepaid Only</div>
                     <div className="text-gray-400 text-xs">Safe payments</div>
                   </CardContent>
@@ -160,7 +169,7 @@ const ProductPage = () => {
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">Premium Features</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-0">
                   {features.map((feature, index) => <div key={index} className="flex items-center p-3 rounded-lg bg-white/5 border border-white/10 px-[15px]">
-                      <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mr-4 flex-shrink-0"></div>
+                      <div className="w-3 h-3 bg-[#017aff] rounded-full mr-4 flex-shrink-0"></div>
                       <span className="text-gray-300 text-sm">{feature}</span>
                     </div>)}
                 </div>
@@ -173,16 +182,14 @@ const ProductPage = () => {
             <Card className="glass-card border-white/10 max-w-4xl mx-auto rounded-2xl">
               <CardContent className="p-8 px-[14px] py-[17px]">
                 <div className="flex items-center mb-6">
-                  <Ruler className="w-6 h-6 text-blue-400 mr-3" />
+                  <Ruler className="w-6 h-6 text-[#017aff] mr-3" />
                   <h2 className="text-2xl font-bold text-white">Understanding Diecast Scale (in cm)</h2>
                 </div>
-                
                 {/* Scale comparison image */}
                 <div className="mb-8">
                   <img src="/lovable-uploads/665693e7-3e96-4091-b718-98c696a7a35f.png" alt="Diecast car scale comparison showing 1:18, 1:24, 1:37, and 1:64 models" className="w-full max-w-2xl mx-auto rounded-lg border border-white/20" />
                   <p className="text-center text-gray-400 text-sm mt-2">Visual comparison of different diecast scales</p>
                 </div>
-                
                 <div className="space-y-6">
                   <div className="text-gray-300 leading-relaxed">
                     <p className="mb-4">
@@ -191,7 +198,7 @@ const ProductPage = () => {
                     <div className="bg-white/5 rounded-lg p-4 mb-4">
                       <p className="text-white font-semibold mb-2">A 1:24 scale car is 1/24th the size of the real car.</p>
                       <p className="text-white font-semibold mb-2">A 1:18 scale car is bigger than a 1:24, and so on.</p>
-                      <p className="text-blue-400 font-semibold">The larger the bottom number in the scale, the smaller the model.</p>
+                      <p className="text-[#017aff] font-semibold">The larger the bottom number in the scale, the smaller the model.</p>
                     </div>
                   </div>
 
@@ -201,23 +208,23 @@ const ProductPage = () => {
                       {[{
                       scale: '1:18',
                       size: '24 to 30 cm',
-                      color: 'from-green-500/20 to-green-600/30 border-green-400/20'
+                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
                     }, {
                       scale: '1:24',
                       size: '16 to 20 cm',
-                      color: 'from-blue-500/20 to-blue-600/30 border-blue-400/20'
+                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
                     }, {
                       scale: '1:32',
                       size: '10 to 15 cm',
-                      color: 'from-purple-500/20 to-purple-600/30 border-purple-400/20'
+                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
                     }, {
                       scale: '1:43',
                       size: '8 to 12 cm',
-                      color: 'from-yellow-500/20 to-yellow-600/30 border-yellow-400/20'
+                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
                     }, {
                       scale: '1:64',
                       size: '6 to 7.5 cm',
-                      color: 'from-red-500/20 to-red-600/30 border-red-400/20'
+                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
                     }].map((item, index) => <div key={index} className={`bg-gradient-to-br ${item.color} backdrop-blur-md border rounded-lg p-4 transition-all duration-300 hover:scale-105`}>
                           <div className="text-white font-bold text-lg mb-1">{item.scale} scale</div>
                           <div className="text-gray-300 text-sm">{item.size}</div>
@@ -231,8 +238,16 @@ const ProductPage = () => {
 
           {/* Trust Indicators Section */}
           <div className="mt-16">
-            
-            
+            <h2 className="font-bold text-white text-center mb-8 text-2xl">Why Choose Us?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {trustIndicators.map((indicator, index) => <Card key={index} className="glass-card border-white/10">
+                  <CardContent className="p-6 text-center">
+                    {indicator.icon}
+                    <h3 className="text-lg font-semibold text-white mt-3 mb-1">{indicator.title}</h3>
+                    <p className="text-gray-400 text-sm">{indicator.description}</p>
+                  </CardContent>
+                </Card>)}
+            </div>
           </div>
 
           {/* Customer Reviews Section */}
@@ -251,11 +266,11 @@ const ProductPage = () => {
                         <p className="text-gray-400 text-sm">{review.location}</p>
                       </div>
                     </div>
-                    
+                    {/* Star Rating */}
                     <div className="flex mb-3">
                       {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                     </div>
-                    
+                    {/* Review Comment */}
                     <p className="text-gray-300 text-sm leading-relaxed">
                       {review.comment}
                     </p>
