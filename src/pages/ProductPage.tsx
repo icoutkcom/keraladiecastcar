@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -6,7 +5,6 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Truck, Shield, CreditCard, Star, Users, Award, CheckCircle, Ruler } from 'lucide-react';
-
 const ProductPage = () => {
   const {
     id
@@ -77,11 +75,9 @@ const ProductPage = () => {
     title: "Secure Payments",
     description: "SSL encrypted checkout"
   }];
-
   const handleAddToCart = () => {
     window.open('https://wa.me/qr/ZSKPUHIUU5JKJ1', '_blank');
   };
-
   return <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Header onSearch={() => {}} cartItems={0} />
       
@@ -97,11 +93,7 @@ const ProductPage = () => {
             {/* Product Image */}
             <div className="relative">
               <div className="glass-card rounded-2xl overflow-hidden border-white/10 p-6">
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="w-full h-96 object-cover rounded-xl"
-                />
+                <img src={product.image} alt={product.name} className="w-full h-96 object-cover rounded-xl" />
                 <div className="absolute top-8 left-8">
                   <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Premium Quality
@@ -139,10 +131,7 @@ const ProductPage = () => {
               </div>
 
               {/* Purchase Button */}
-              <Button 
-                onClick={handleAddToCart}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
-              >
+              <Button onClick={handleAddToCart} className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
                 Add to Cart - ₹{selectedPrice}
               </Button>
 
@@ -178,9 +167,9 @@ const ProductPage = () => {
           {/* Product Features */}
           <div className="mt-12">
             <Card className="glass-card border-white/10 rounded-2xl">
-              <CardContent className="p-8">
+              <CardContent className="p-8 px-[5px] py-[15px]">
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">Premium Features</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-0">
                   {features.map((feature, index) => <div key={index} className="flex items-center p-3 rounded-lg bg-white/5 border border-white/10">
                       <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mr-4 flex-shrink-0"></div>
                       <span className="text-gray-300 text-sm">{feature}</span>
@@ -214,18 +203,30 @@ const ProductPage = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-4">Common Diecast Scales (Approx. Size in cm):</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {[
-                        { scale: '1:18', size: '24 to 30 cm', color: 'from-green-500/20 to-green-600/30 border-green-400/20' },
-                        { scale: '1:24', size: '16 to 20 cm', color: 'from-blue-500/20 to-blue-600/30 border-blue-400/20' },
-                        { scale: '1:32', size: '10 to 15 cm', color: 'from-purple-500/20 to-purple-600/30 border-purple-400/20' },
-                        { scale: '1:43', size: '8 to 12 cm', color: 'from-yellow-500/20 to-yellow-600/30 border-yellow-400/20' },
-                        { scale: '1:64', size: '6 to 7.5 cm', color: 'from-red-500/20 to-red-600/30 border-red-400/20' }
-                      ].map((item, index) => (
-                        <div key={index} className={`bg-gradient-to-br ${item.color} backdrop-blur-md border rounded-lg p-4 transition-all duration-300 hover:scale-105`}>
+                      {[{
+                      scale: '1:18',
+                      size: '24 to 30 cm',
+                      color: 'from-green-500/20 to-green-600/30 border-green-400/20'
+                    }, {
+                      scale: '1:24',
+                      size: '16 to 20 cm',
+                      color: 'from-blue-500/20 to-blue-600/30 border-blue-400/20'
+                    }, {
+                      scale: '1:32',
+                      size: '10 to 15 cm',
+                      color: 'from-purple-500/20 to-purple-600/30 border-purple-400/20'
+                    }, {
+                      scale: '1:43',
+                      size: '8 to 12 cm',
+                      color: 'from-yellow-500/20 to-yellow-600/30 border-yellow-400/20'
+                    }, {
+                      scale: '1:64',
+                      size: '6 to 7.5 cm',
+                      color: 'from-red-500/20 to-red-600/30 border-red-400/20'
+                    }].map((item, index) => <div key={index} className={`bg-gradient-to-br ${item.color} backdrop-blur-md border rounded-lg p-4 transition-all duration-300 hover:scale-105`}>
                           <div className="text-white font-bold text-lg mb-1">{item.scale} scale</div>
                           <div className="text-gray-300 text-sm">{item.size}</div>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                   </div>
                 </div>
@@ -273,5 +274,4 @@ const ProductPage = () => {
       <Footer />
     </div>;
 };
-
 export default ProductPage;
