@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Truck, Shield, CreditCard, Star, Users, Award, CheckCircle, Ruler } from 'lucide-react';
-
 const ProductPage = () => {
   const {
     id
@@ -90,7 +89,7 @@ const ProductPage = () => {
             Back to Products
           </Button>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-0">
             {/* Product Image */}
             <div className="relative">
               
@@ -99,7 +98,7 @@ const ProductPage = () => {
             {/* Product Details */}
             <div className="space-y-6">
               {/* Product Header */}
-              <div className="glass-card rounded-2xl p-6 border-white/10 py-[12px]">
+              <div className="glass-card rounded-2xl p-6 border-white/10 py-[9px]">
                 
                 
                 <div className="text-3xl font-bold text-white">₹{selectedPrice}</div>
@@ -179,11 +178,7 @@ const ProductPage = () => {
                 
                 {/* Scale comparison image */}
                 <div className="mb-8">
-                  <img 
-                    src="/lovable-uploads/665693e7-3e96-4091-b718-98c696a7a35f.png" 
-                    alt="Diecast car scale comparison showing 1:18, 1:24, 1:37, and 1:64 models"
-                    className="w-full max-w-2xl mx-auto rounded-lg border border-white/20"
-                  />
+                  <img src="/lovable-uploads/665693e7-3e96-4091-b718-98c696a7a35f.png" alt="Diecast car scale comparison showing 1:18, 1:24, 1:37, and 1:64 models" className="w-full max-w-2xl mx-auto rounded-lg border border-white/20" />
                   <p className="text-center text-gray-400 text-sm mt-2">Visual comparison of different diecast scales</p>
                 </div>
                 
@@ -273,5 +268,4 @@ const ProductPage = () => {
       <Footer />
     </div>;
 };
-
 export default ProductPage;
