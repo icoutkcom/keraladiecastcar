@@ -89,35 +89,19 @@ const ProductPage = () => {
             Back to Products
           </Button>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-0">
             {/* Product Image */}
             <div className="relative">
-              <div className="glass-card rounded-2xl overflow-hidden border-white/10 p-6">
-                <img src={product.image} alt={product.name} className="w-full h-96 object-cover rounded-xl" />
-                <div className="absolute top-8 left-8">
-                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Premium Quality
-                  </span>
-                </div>
-              </div>
+              
             </div>
 
             {/* Product Details */}
             <div className="space-y-6">
               {/* Product Header */}
-              <div className="glass-card rounded-2xl p-6 border-white/10">
-                <h1 className="text-2xl lg:text-3xl font-bold text-white mb-3">{product.name}</h1>
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-                  </div>
-                  <span className="text-gray-400 text-sm">(Premium Quality)</span>
-                </div>
-                <div className="text-3xl font-bold text-white">₹{selectedPrice}</div>
-              </div>
+              
 
               {/* Size Selection */}
-              <div className="glass-card rounded-2xl p-6 border-white/10 px-[11px] py-[12px]">
+              <div className="glass-card rounded-2xl p-6 border-white/10 px-[11px] py-[15px]">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                   <Ruler className="w-5 h-5 mr-2 text-blue-400" />
                   Select Size & Scale
