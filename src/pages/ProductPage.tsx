@@ -182,7 +182,7 @@ const ProductPage = () => {
           {/* Understanding Diecast Scale Section */}
           <div className="mt-16">
             <Card className="glass-card border-white/10 max-w-4xl mx-auto rounded-2xl">
-              <CardContent className="p-8">
+              <CardContent className="p-8 px-[14px] py-[17px]">
                 <div className="flex items-center mb-6">
                   <Ruler className="w-6 h-6 text-blue-400 mr-3" />
                   <h2 className="text-2xl font-bold text-white">Understanding Diecast Scale (in cm)</h2>
