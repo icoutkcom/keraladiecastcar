@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -7,7 +8,8 @@ import { generateProducts, Product } from '@/utils/productData';
 import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Filter } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Search, Filter, Star, TrendingUp } from 'lucide-react';
 
 const categories = [
   { name: 'All', value: 'all' },
@@ -25,6 +27,9 @@ const categories = [
 ];
 
 const PRODUCTS_PER_PAGE = 20;
+
+// Top selling categories for badge display
+const topSellingCategories = ['ferrari', 'lamborghini', 'bugatti', 'tesla'];
 
 const CategoriesPage = () => {
   const { toast } = useToast();
@@ -113,6 +118,7 @@ const CategoriesPage = () => {
   };
 
   const selectedCategoryName = categories.find(cat => cat.value === selectedCategory)?.name || 'All';
+  const isTopSellingCategory = topSellingCategories.includes(selectedCategory);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
@@ -120,10 +126,71 @@ const CategoriesPage = () => {
       
       <div className="pt-24 pb-12">
         <div className="container mx-auto px-4">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold text-white mb-6 text-center">
-              {selectedCategory === 'all' ? 'All Categories' : `${selectedCategoryName} Collection`}
-            </h1>
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <h1 className="text-4xl font-bold text-white">
+                  {selectedCategory === 'all' ? 'All Categories' : `${selectedCategoryName} Collection`}
+                </h1>
+                {isTopSellingCategory && (
+                  <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 text-sm font-semibold flex items-center gap-1">
+                    <TrendingUp className="h-3 w-3" />
+                    TOP SELLING
+                  </Badge>
+                )}
+              </div>
+              
+              {/* Beautiful Search Section */}
+              <div className="max-w-2xl mx-auto mb-8">
+                <div className="relative group">
+                  {/* Glassmorphism container */}
+                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-md border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10">
+                    {/* Shimmer effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                    </div>
+                    
+                    {/* Search input */}
+                    <div className="relative flex items-center p-2">
+                      <div className="relative flex-1">
+                        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/70" />
+                        <Input
+                          placeholder="Search for your dream diecast car..."
+                          className="pl-12 pr-4 h-14 bg-transparent border-none text-white placeholder:text-white/50 text-lg focus-visible:ring-0 focus-visible:ring-offset-0"
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                      </div>
+                      
+                      <Button
+                        className="ml-2 h-12 px-8 bg-gradient-to-r from-white to-gray-200 text-black hover:from-gray-100 hover:to-gray-300 font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+                      >
+                        <Search className="h-4 w-4 mr-2" />
+                        Search
+                      </Button>
+                    </div>
+                  </div>
+                  
+                  {/* Popular searches */}
+                  <div className="flex flex-wrap justify-center gap-2 mt-4">
+                    <span className="text-sm text-gray-400">Popular searches:</span>
+                    {['Ferrari', 'Lamborghini', '1:18 Scale', 'BMW', 'Tesla'].map(tag => (
+                      <button
+                        key={tag}
+                        type="button"
+                        onClick={() => setSearchQuery(tag)}
+                        className="px-3 py-1 text-sm bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-300 hover:scale-105 flex items-center gap-1"
+                      >
+                        {topSellingCategories.includes(tag.toLowerCase()) && (
+                          <Star className="h-3 w-3 text-yellow-400 fill-current" />
+                        )}
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
             
             {/* Category Filter Buttons */}
             <div className="flex flex-wrap justify-center gap-2 mb-6">
@@ -132,22 +199,16 @@ const CategoriesPage = () => {
                   key={category.value}
                   variant={selectedCategory === category.value ? "default" : "outline"}
                   onClick={() => handleCategoryChange(category.value)}
-                  className="min-w-0"
+                  className="min-w-0 relative"
                 >
                   {category.name}
+                  {topSellingCategories.includes(category.value) && (
+                    <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 py-0.5 rounded-full">
+                      <TrendingUp className="h-2 w-2" />
+                    </Badge>
+                  )}
                 </Button>
               ))}
-            </div>
-            
-            {/* Search Bar */}
-            <div className="relative max-w-md mx-auto mb-6">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-              <Input 
-                placeholder="Search products..." 
-                className="pl-10 glass border-white/20 text-white placeholder:text-gray-400" 
-                value={searchQuery} 
-                onChange={e => setSearchQuery(e.target.value)} 
-              />
             </div>
             
             <p className="text-gray-400 text-center">
