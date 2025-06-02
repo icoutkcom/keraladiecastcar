@@ -155,10 +155,10 @@ const ProductPage = () => {
           {/* Product Features */}
           <div className="mt-12">
             <Card className="glass-card border-white/10 rounded-2xl">
-              <CardContent className="p-8 px-[5px] py-[13px]">
+              <CardContent className="p-8 py-[13px] px-[8px]">
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">Premium Features</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-0">
-                  {features.map((feature, index) => <div key={index} className="flex items-center p-3 rounded-lg bg-white/5 border border-white/10">
+                  {features.map((feature, index) => <div key={index} className="flex items-center p-3 rounded-lg bg-white/5 border border-white/10 px-[15px]">
                       <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mr-4 flex-shrink-0"></div>
                       <span className="text-gray-300 text-sm">{feature}</span>
                     </div>)}
