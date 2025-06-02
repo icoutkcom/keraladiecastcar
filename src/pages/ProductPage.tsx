@@ -1,10 +1,11 @@
+
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Truck, Shield, CreditCard, Star, Users, Award, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Truck, Shield, CreditCard, Star, Users, Award, CheckCircle, Ruler } from 'lucide-react';
 
 const ProductPage = () => {
   const {
@@ -182,6 +183,49 @@ const ProductPage = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+
+          {/* Understanding Diecast Scale Section */}
+          <div className="mt-16">
+            <Card className="glass-card border-white/10 max-w-4xl mx-auto">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <Ruler className="w-6 h-6 text-blue-400 mr-3" />
+                  <h2 className="text-2xl font-bold text-white">Understanding Diecast Scale (in cm)</h2>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="text-gray-300 leading-relaxed">
+                    <p className="mb-4">
+                      Diecast scale shows how small a model is compared to the real vehicle. For example:
+                    </p>
+                    <div className="bg-white/5 rounded-lg p-4 mb-4">
+                      <p className="text-white font-semibold mb-2">A 1:24 scale car is 1/24th the size of the real car.</p>
+                      <p className="text-white font-semibold mb-2">A 1:18 scale car is bigger than a 1:24, and so on.</p>
+                      <p className="text-blue-400 font-semibold">The larger the bottom number in the scale, the smaller the model.</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-4">Common Diecast Scales (Approx. Size in cm):</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {[
+                        { scale: '1:18', size: '24 to 30 cm', color: 'from-green-500/20 to-green-600/30 border-green-400/20' },
+                        { scale: '1:24', size: '16 to 20 cm', color: 'from-blue-500/20 to-blue-600/30 border-blue-400/20' },
+                        { scale: '1:32', size: '10 to 15 cm', color: 'from-purple-500/20 to-purple-600/30 border-purple-400/20' },
+                        { scale: '1:43', size: '8 to 12 cm', color: 'from-yellow-500/20 to-yellow-600/30 border-yellow-400/20' },
+                        { scale: '1:64', size: '6 to 7.5 cm', color: 'from-red-500/20 to-red-600/30 border-red-400/20' }
+                      ].map((item, index) => (
+                        <div key={index} className={`bg-gradient-to-br ${item.color} backdrop-blur-md border rounded-lg p-4 transition-all duration-300 hover:scale-105`}>
+                          <div className="text-white font-bold text-lg mb-1">{item.scale} scale</div>
+                          <div className="text-gray-300 text-sm">{item.size}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Trust Indicators Section */}
