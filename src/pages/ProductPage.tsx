@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -98,46 +99,46 @@ const ProductPage = () => {
             
 
             {/* Product Details */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div>
                 
-                <div className="flex items-center space-x-2 mb-4">
+                <div className="flex items-center space-x-2 mb-3">
                   <div className="flex">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
                   </div>
-                  <span className="text-gray-400 text-sm">(Premium Quality)</span>
+                  <span className="text-gray-400 text-xs">(Premium Quality)</span>
                 </div>
               </div>
 
               {/* Size Selection */}
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-white mb-4">Select Size & Price</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {sizes.map(size => <button key={size.scale} onClick={() => setSelectedSize(size.scale)} className={`p-3 rounded-lg border transition-all ${selectedSize === size.scale ? 'border-white bg-white/10 text-white' : 'border-gray-600 text-gray-400 hover:border-gray-400'}`}>
+              <div className="glass-card rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-white mb-3">Select Size & Price</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  {sizes.map(size => <button key={size.scale} onClick={() => setSelectedSize(size.scale)} className={`p-2 rounded-md border text-xs transition-all ${selectedSize === size.scale ? 'border-white bg-white/10 text-white' : 'border-gray-600 text-gray-400 hover:border-gray-400'}`}>
                       <div className="font-semibold">{size.scale}</div>
-                      <div className="text-sm">₹{size.price}</div>
+                      <div className="text-xs">₹{size.price}</div>
                     </button>)}
                 </div>
-                <div className="mt-4 text-center">
-                  <span className="text-2xl font-bold text-white">₹{selectedPrice}</span>
+                <div className="mt-3 text-center">
+                  <span className="text-xl font-bold text-white">₹{selectedPrice}</span>
                 </div>
               </div>
 
               {/* Purchase Button */}
               <Button 
                 onClick={handleAddToCart}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2.5 text-sm"
               >
                 Add to Cart - ₹{selectedPrice}
               </Button>
 
               {/* Product Features */}
               <Card className="glass-card border-white/10">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">Product Features</h3>
-                  <ul className="space-y-2">
-                    {features.map((feature, index) => <li key={index} className="flex items-start text-gray-300 text-sm">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <CardContent className="p-4">
+                  <h3 className="text-sm font-semibold text-white mb-3">Product Features</h3>
+                  <ul className="space-y-1.5">
+                    {features.map((feature, index) => <li key={index} className="flex items-start text-gray-300 text-xs">
+                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 mr-2 flex-shrink-0"></span>
                         {feature}
                       </li>)}
                   </ul>
@@ -145,27 +146,27 @@ const ProductPage = () => {
               </Card>
 
               {/* Shipping & Policies */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <Card className="glass-card border-white/10">
-                  <CardContent className="p-4 text-center">
-                    <CreditCard className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Prepaid Only</div>
+                  <CardContent className="p-3 text-center">
+                    <CreditCard className="w-4 h-4 text-blue-400 mx-auto mb-1" />
+                    <div className="text-white font-semibold text-xs">Prepaid Only</div>
                     <div className="text-gray-400 text-xs">To avoid fake orders</div>
                   </CardContent>
                 </Card>
 
                 <Card className="glass-card border-white/10">
-                  <CardContent className="p-4 text-center">
-                    <Truck className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">3-7 Day Shipping</div>
+                  <CardContent className="p-3 text-center">
+                    <Truck className="w-4 h-4 text-green-400 mx-auto mb-1" />
+                    <div className="text-white font-semibold text-xs">3-7 Day Shipping</div>
                     <div className="text-gray-400 text-xs">Fast delivery</div>
                   </CardContent>
                 </Card>
 
                 <Card className="glass-card border-white/10">
-                  <CardContent className="p-4 text-center">
-                    <Shield className="w-6 h-6 text-red-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Returns Policy</div>
+                  <CardContent className="p-3 text-center">
+                    <Shield className="w-4 h-4 text-red-400 mx-auto mb-1" />
+                    <div className="text-white font-semibold text-xs">Returns Policy</div>
                     <div className="text-gray-400 text-xs">Damage/Wrong items only</div>
                   </CardContent>
                 </Card>
@@ -173,9 +174,9 @@ const ProductPage = () => {
 
               {/* Additional Info */}
               <Card className="glass-card border-white/10">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-white mb-3">About This Model</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                <CardContent className="p-4">
+                  <h3 className="text-sm font-semibold text-white mb-2">About This Model</h3>
+                  <p className="text-gray-300 text-xs leading-relaxed">
                     This premium diecast model is crafted with precision and quality. Made from durable metal and fiber materials, 
                     it features authentic details including rollable wheels, openable doors and bonnet, working headlights and side lights. 
                     Each model is carefully constructed to provide the most realistic and detailed representation of the original vehicle.
@@ -270,3 +271,4 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
+
