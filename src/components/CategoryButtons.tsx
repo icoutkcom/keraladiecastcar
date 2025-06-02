@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const categories = [
-  { name: 'Land Rover', value: 'land-rover', color: 'bg-green-600 hover:bg-green-700' },
-  { name: 'Mercedes', value: 'mercedes', color: 'bg-blue-600 hover:bg-blue-700' },
-  { name: 'BMW', value: 'bmw', color: 'bg-gray-600 hover:bg-gray-700' },
-  { name: 'Audi', value: 'audi', color: 'bg-red-600 hover:bg-red-700' },
-  { name: 'Toyota', value: 'toyota', color: 'bg-orange-600 hover:bg-orange-700' },
-  { name: 'Honda', value: 'honda', color: 'bg-purple-600 hover:bg-purple-700' },
-  { name: 'Porsche', value: 'porsche', color: 'bg-yellow-600 hover:bg-yellow-700' },
-  { name: 'Rolls Royce', value: 'rolls-royce', color: 'bg-indigo-600 hover:bg-indigo-700' },
-  { name: 'Ferrari', value: 'ferrari', color: 'bg-red-700 hover:bg-red-800' },
-  { name: 'Lamborghini', value: 'lamborghini', color: 'bg-orange-700 hover:bg-orange-800' },
-  { name: 'Mercedes Benz', value: 'mercedes-benz', color: 'bg-slate-600 hover:bg-slate-700' },
-  { name: 'Pagani', value: 'pagani', color: 'bg-cyan-600 hover:bg-cyan-700' },
+  { name: 'Land Rover', value: 'land-rover', color: 'from-green-500/20 to-green-600/30 border-green-400/20 hover:border-green-400/40' },
+  { name: 'Mercedes', value: 'mercedes', color: 'from-blue-500/20 to-blue-600/30 border-blue-400/20 hover:border-blue-400/40' },
+  { name: 'BMW', value: 'bmw', color: 'from-gray-500/20 to-gray-600/30 border-gray-400/20 hover:border-gray-400/40' },
+  { name: 'Audi', value: 'audi', color: 'from-red-500/20 to-red-600/30 border-red-400/20 hover:border-red-400/40' },
+  { name: 'Toyota', value: 'toyota', color: 'from-orange-500/20 to-orange-600/30 border-orange-400/20 hover:border-orange-400/40' },
+  { name: 'Honda', value: 'honda', color: 'from-purple-500/20 to-purple-600/30 border-purple-400/20 hover:border-purple-400/40' },
+  { name: 'Porsche', value: 'porsche', color: 'from-yellow-500/20 to-yellow-600/30 border-yellow-400/20 hover:border-yellow-400/40' },
+  { name: 'Rolls Royce', value: 'rolls-royce', color: 'from-indigo-500/20 to-indigo-600/30 border-indigo-400/20 hover:border-indigo-400/40' },
+  { name: 'Ferrari', value: 'ferrari', color: 'from-red-600/20 to-red-700/30 border-red-500/20 hover:border-red-500/40' },
+  { name: 'Lamborghini', value: 'lamborghini', color: 'from-orange-600/20 to-orange-700/30 border-orange-500/20 hover:border-orange-500/40' },
+  { name: 'Mercedes Benz', value: 'mercedes-benz', color: 'from-slate-500/20 to-slate-600/30 border-slate-400/20 hover:border-slate-400/40' },
+  { name: 'Pagani', value: 'pagani', color: 'from-cyan-500/20 to-cyan-600/30 border-cyan-400/20 hover:border-cyan-400/40' },
 ];
 
 const CategoryButtons = () => {
@@ -29,22 +29,46 @@ const CategoryButtons = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {categories.map((category) => (
-            <Link key={category.value} to={`/categories?category=${category.value}`}>
-              <Button 
-                className={`w-full h-16 text-white font-semibold text-sm transition-all duration-300 hover:scale-105 ${category.color} border-0`}
-                variant="default"
+            <Link key={category.value} to={`/categories?category=${category.value}`} className="group">
+              <div 
+                className={`
+                  relative h-16 w-full rounded-lg
+                  bg-gradient-to-br ${category.color}
+                  backdrop-blur-md border
+                  transition-all duration-300 ease-out
+                  hover:scale-105 hover:shadow-xl hover:shadow-white/10
+                  group-hover:backdrop-blur-lg
+                  overflow-hidden
+                `}
               >
-                {category.name}
-              </Button>
+                {/* Glassmorphism overlay */}
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
+                
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                </div>
+                
+                {/* Content */}
+                <div className="relative z-10 h-full flex items-center justify-center px-3">
+                  <span className="text-white font-semibold text-sm text-center leading-tight drop-shadow-lg">
+                    {category.name}
+                  </span>
+                </div>
+              </div>
             </Link>
           ))}
         </div>
         
         <div className="text-center mt-8">
           <Link to="/categories">
-            <Button variant="outline" className="px-8 py-3">
-              View All Categories
-            </Button>
+            <div className="inline-block relative">
+              <div className="glass-card rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/10">
+                <div className="px-8 py-3 backdrop-blur-md">
+                  <span className="text-white font-medium">View All Categories</span>
+                </div>
+              </div>
+            </div>
           </Link>
         </div>
       </div>
