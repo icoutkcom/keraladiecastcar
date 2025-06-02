@@ -117,7 +117,7 @@ const ProductPage = () => {
               </div>
 
               {/* Size Selection */}
-              <div className="glass-card rounded-2xl p-6 border-white/10">
+              <div className="glass-card rounded-2xl p-6 border-white/10 px-[11px] py-[12px]">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                   <Ruler className="w-5 h-5 mr-2 text-blue-400" />
                   Select Size & Scale
@@ -125,7 +125,7 @@ const ProductPage = () => {
                 <div className="grid grid-cols-2 gap-3">
                   {sizes.map(size => <button key={size.scale} onClick={() => setSelectedSize(size.scale)} className={`p-4 rounded-xl border transition-all duration-300 ${selectedSize === size.scale ? 'border-blue-400 bg-gradient-to-r from-blue-500/20 to-purple-600/20 text-white transform scale-105' : 'border-gray-600 text-gray-400 hover:border-gray-400 hover:bg-white/5'}`}>
                       <div className="font-bold text-lg">{size.scale}</div>
-                      <div className="text-sm opacity-80">₹{size.price}</div>
+                      <div className="text-sm opacity-80 bg-black/0">₹{size.price}</div>
                     </button>)}
                 </div>
               </div>
