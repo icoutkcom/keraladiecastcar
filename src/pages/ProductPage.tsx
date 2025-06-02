@@ -92,14 +92,7 @@ const ProductPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Product Image */}
             <div className="relative">
-              <div className="glass-card rounded-2xl overflow-hidden border-white/10 p-6">
-                <img src={product.image} alt={product.name} className="w-full h-96 object-cover rounded-xl" />
-                <div className="absolute top-8 left-8">
-                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Premium Quality
-                  </span>
-                </div>
-              </div>
+              
             </div>
 
             {/* Product Details */}
