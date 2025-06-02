@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Truck, Shield, CreditCard, Star, Users, Award, CheckCircle, Ruler } from 'lucide-react';
+
 const ProductPage = () => {
   const {
     id
@@ -176,6 +177,16 @@ const ProductPage = () => {
                   <h2 className="text-2xl font-bold text-white">Understanding Diecast Scale (in cm)</h2>
                 </div>
                 
+                {/* Scale comparison image */}
+                <div className="mb-8">
+                  <img 
+                    src="/lovable-uploads/665693e7-3e96-4091-b718-98c696a7a35f.png" 
+                    alt="Diecast car scale comparison showing 1:18, 1:24, 1:37, and 1:64 models"
+                    className="w-full max-w-2xl mx-auto rounded-lg border border-white/20"
+                  />
+                  <p className="text-center text-gray-400 text-sm mt-2">Visual comparison of different diecast scales</p>
+                </div>
+                
                 <div className="space-y-6">
                   <div className="text-gray-300 leading-relaxed">
                     <p className="mb-4">
@@ -262,4 +273,5 @@ const ProductPage = () => {
       <Footer />
     </div>;
 };
+
 export default ProductPage;
