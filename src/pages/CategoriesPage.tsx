@@ -24,6 +24,7 @@ const categories = [
   { name: 'Lamborghini', value: 'lamborghini' },
   { name: 'Mercedes Benz', value: 'mercedes-benz' },
   { name: 'Pagani', value: 'pagani' },
+  { name: 'Bugatti', value: 'bugatti' },
 ];
 
 const PRODUCTS_PER_PAGE = 20;

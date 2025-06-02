@@ -16,6 +16,7 @@ const categories = [
   { name: 'Lamborghini', value: 'lamborghini', color: 'from-orange-600/20 to-orange-700/30 border-orange-500/20 hover:border-orange-500/40' },
   { name: 'Mercedes Benz', value: 'mercedes-benz', color: 'from-slate-500/20 to-slate-600/30 border-slate-400/20 hover:border-slate-400/40' },
   { name: 'Pagani', value: 'pagani', color: 'from-cyan-500/20 to-cyan-600/30 border-cyan-400/20 hover:border-cyan-400/40' },
+  { name: 'Bugatti', value: 'bugatti', color: 'from-blue-700/20 to-blue-800/30 border-blue-600/20 hover:border-blue-600/40' },
 ];
 
 const CategoryButtons = () => {
@@ -39,10 +40,18 @@ const CategoryButtons = () => {
                   hover:scale-105 hover:shadow-xl hover:shadow-white/10
                   group-hover:backdrop-blur-lg
                   overflow-hidden
+                  ${category.value === 'bugatti' ? 'ring-2 ring-blue-400/50' : ''}
                 `}
               >
                 {/* Glassmorphism overlay */}
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
+                
+                {/* Top selling badge for Bugatti */}
+                {category.value === 'bugatti' && (
+                  <div className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                    TOP
+                  </div>
+                )}
                 
                 {/* Shimmer effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">

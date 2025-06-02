@@ -11,6 +11,7 @@ import { ferrariProducts } from './data/ferrariData';
 import { lamborghiniProducts } from './data/lamborghiniData';
 import { rollsRoyceProducts } from './data/rollsRoyceData';
 import { paganiProducts } from './data/paganiData';
+import { bugattiProducts } from './data/bugattiData';
 
 export interface Product {
   id: number;
@@ -33,11 +34,12 @@ const realProducts: Product[] = [
   ...ferrariProducts,
   ...lamborghiniProducts,
   ...rollsRoyceProducts,
-  ...paganiProducts
+  ...paganiProducts,
+  ...bugattiProducts
 ];
 
 // Generate more products with different categories
-const carBrands = ['land-rover', 'mercedes', 'bmw', 'audi', 'toyota', 'honda', 'porsche', 'rolls-royce', 'ferrari', 'lamborghini', 'mercedes-benz', 'pagani'];
+const carBrands = ['land-rover', 'mercedes', 'bmw', 'audi', 'toyota', 'honda', 'porsche', 'rolls-royce', 'ferrari', 'lamborghini', 'mercedes-benz', 'pagani', 'bugatti'];
 const productNames = [
   'Sport Edition',
   'Luxury Model',
@@ -83,5 +85,6 @@ export {
   ferrariProducts,
   lamborghiniProducts,
   rollsRoyceProducts,
-  paganiProducts
+  paganiProducts,
+  bugattiProducts
 };
