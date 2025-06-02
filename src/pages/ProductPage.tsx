@@ -98,14 +98,9 @@ const ProductPage = () => {
             {/* Product Details */}
             <div className="space-y-6">
               {/* Product Header */}
-              <div className="glass-card rounded-2xl p-6 border-white/10">
-                <h1 className="text-2xl lg:text-3xl font-bold text-white mb-3">{product.name}</h1>
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-                  </div>
-                  <span className="text-gray-400 text-sm">(Premium Quality)</span>
-                </div>
+              <div className="glass-card rounded-2xl p-6 border-white/10 py-[12px]">
+                
+                
                 <div className="text-3xl font-bold text-white">₹{selectedPrice}</div>
               </div>
 
