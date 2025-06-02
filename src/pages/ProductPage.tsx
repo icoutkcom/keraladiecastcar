@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -5,10 +6,9 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Truck, Shield, CreditCard, Star, Users, Award, CheckCircle, Ruler } from 'lucide-react';
+
 const ProductPage = () => {
-  const {
-    id
-  } = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
   const [selectedSize, setSelectedSize] = useState('1:18');
 
@@ -18,67 +18,85 @@ const ProductPage = () => {
     name: 'Premium Diecast Sports Car Model',
     image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=600&fit=crop'
   };
-  const sizes = [{
-    scale: '1:18',
-    price: 1499
-  }, {
-    scale: '1:24',
-    price: 999
-  }, {
-    scale: '1:32',
-    price: 499
-  }, {
-    scale: '1:64',
-    price: 299
-  }];
+
+  const sizes = [
+    { scale: '1:18', price: 1499 },
+    { scale: '1:24', price: 999 },
+    { scale: '1:32', price: 499 },
+    { scale: '1:64', price: 299 }
+  ];
+
   const selectedPrice = sizes.find(size => size.scale === selectedSize)?.price || 1499;
-  const features = ['Made of high-quality metal and fiber', 'Rollable wheels for authentic movement', 'Openable doors for detailed interior view', 'Functional bonnet/hood opening', 'Working headlights and side lights', 'Precision diecast construction', 'Premium quality finish'];
-  const reviews = [{
-    id: 1,
-    name: 'Rajesh Kumar',
-    location: 'Mumbai',
-    rating: 5,
-    comment: 'Absolutely fantastic product! The quality is top-notch and my son is very happy with this car model. Worth every rupee spent. Delivery was also very fast.',
-    image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=300&fit=crop',
-    verified: true
-  }, {
-    id: 2,
-    name: 'Priya Sharma',
-    location: 'Delhi',
-    rating: 5,
-    comment: 'Very nice diecast model. All features are working perfectly - doors open, lights work, wheels roll smoothly. My husband loves collecting these and this one is really good quality.',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&h=300&fit=crop',
-    verified: true
-  }, {
-    id: 3,
-    name: 'Amit Patel',
-    location: 'Bangalore',
-    rating: 4,
-    comment: 'Good product overall. The metal finish is excellent and all moving parts are working fine. Only thing is packaging could be better, but product reached safely. Recommended!',
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=300&h=300&fit=crop',
-    verified: true
-  }];
-  const trustIndicators = [{
-    icon: <Users className="w-6 h-6 text-[#017aff]" />,
-    title: "50,000+ Happy Customers",
-    description: "Trusted by collectors nationwide"
-  }, {
-    icon: <Award className="w-6 h-6 text-yellow-400" />,
-    title: "Premium Quality Certified",
-    description: "ISO certified manufacturing"
-  }, {
-    icon: <CheckCircle className="w-6 h-6 text-green-400" />,
-    title: "100% Authentic Products",
-    description: "Original licensed merchandise"
-  }, {
-    icon: <Shield className="w-6 h-6 text-[#017aff]" />,
-    title: "Secure Payments",
-    description: "SSL encrypted checkout"
-  }];
+
+  const features = [
+    'Made of high-quality metal and fiber',
+    'Rollable wheels for authentic movement',
+    'Openable doors for detailed interior view',
+    'Functional bonnet/hood opening',
+    'Working headlights and side lights',
+    'Precision diecast construction',
+    'Premium quality finish'
+  ];
+
+  const reviews = [
+    {
+      id: 1,
+      name: 'Rajesh Kumar',
+      location: 'Mumbai',
+      rating: 5,
+      comment: 'Absolutely fantastic product! The quality is top-notch and my son is very happy with this car model. Worth every rupee spent. Delivery was also very fast.',
+      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=300&fit=crop',
+      verified: true
+    },
+    {
+      id: 2,
+      name: 'Priya Sharma',
+      location: 'Delhi',
+      rating: 5,
+      comment: 'Very nice diecast model. All features are working perfectly - doors open, lights work, wheels roll smoothly. My husband loves collecting these and this one is really good quality.',
+      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&h=300&fit=crop',
+      verified: true
+    },
+    {
+      id: 3,
+      name: 'Amit Patel',
+      location: 'Bangalore',
+      rating: 4,
+      comment: 'Good product overall. The metal finish is excellent and all moving parts are working fine. Only thing is packaging could be better, but product reached safely. Recommended!',
+      image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=300&h=300&fit=crop',
+      verified: true
+    }
+  ];
+
+  const trustIndicators = [
+    {
+      icon: <Users className="w-6 h-6 text-[#017aff]" />,
+      title: "50,000+ Happy Customers",
+      description: "Trusted by collectors nationwide"
+    },
+    {
+      icon: <Award className="w-6 h-6 text-yellow-400" />,
+      title: "Premium Quality Certified",
+      description: "ISO certified manufacturing"
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6 text-green-400" />,
+      title: "100% Authentic Products",
+      description: "Original licensed merchandise"
+    },
+    {
+      icon: <Shield className="w-6 h-6 text-[#017aff]" />,
+      title: "Secure Payments",
+      description: "SSL encrypted checkout"
+    }
+  ];
+
   const handleAddToCart = () => {
     window.open('https://tally.so/r/mBl5r7', '_blank');
   };
-  return <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Header onSearch={() => {}} cartItems={0} />
       
       <div className="pt-24 pb-12">
@@ -92,15 +110,18 @@ const ProductPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-0">
             {/* Product Image */}
             <div className="relative">
-              
+              <img 
+                src={product.image} 
+                alt={product.name}
+                className="w-full h-96 object-cover rounded-2xl border border-white/20"
+              />
             </div>
 
             {/* Product Details */}
             <div className="space-y-6">
               {/* Product Header */}
               <div className="glass-card rounded-2xl p-6 border-white/10 py-[9px]">
-                
-                
+                <h1 className="text-2xl font-bold text-white mb-4">{product.name}</h1>
                 <div className="text-3xl font-bold text-white">₹{selectedPrice}</div>
               </div>
 
@@ -111,15 +132,28 @@ const ProductPage = () => {
                   Select Size & Scale
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {sizes.map(size => <button key={size.scale} onClick={() => setSelectedSize(size.scale)} className={`p-4 rounded-xl border transition-all duration-300 ${selectedSize === size.scale ? 'border-[#017aff] bg-[#017aff]/20 text-white transform scale-105' : 'border-gray-600 text-gray-400 hover:border-gray-400 hover:bg-white/5'}`}>
+                  {sizes.map((size) => (
+                    <button
+                      key={size.scale}
+                      onClick={() => setSelectedSize(size.scale)}
+                      className={`p-4 rounded-xl border transition-all duration-300 ${
+                        selectedSize === size.scale
+                          ? 'border-[#017aff] bg-[#017aff]/20 text-white transform scale-105'
+                          : 'border-gray-600 text-gray-400 hover:border-gray-400 hover:bg-white/5'
+                      }`}
+                    >
                       <div className="font-bold text-lg">{size.scale}</div>
                       <div className="text-sm opacity-80 bg-black/0">₹{size.price}</div>
-                    </button>)}
+                    </button>
+                  ))}
                 </div>
               </div>
 
               {/* Purchase Button */}
-              <Button onClick={handleAddToCart} className="w-full bg-[#017aff] hover:bg-[#017aff]/90 text-white font-bold py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
+              <Button
+                onClick={handleAddToCart}
+                className="w-full bg-[#017aff] hover:bg-[#017aff]/90 text-white font-bold py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
+              >
                 Add to Cart - ₹{selectedPrice}
               </Button>
 
@@ -152,16 +186,57 @@ const ProductPage = () => {
             </div>
           </div>
 
+          {/* Customer Reviews Section */}
+          <div className="mt-16">
+            <h2 className="font-bold text-white text-center mb-8 text-2xl">Happy Customer Reviews :)</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {reviews.map((review) => (
+                <Card key={review.id} className="glass-card border-white/10">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <img 
+                        src={review.image} 
+                        alt={`Review by ${review.name}`}
+                        className="w-12 h-12 rounded-full object-cover mr-4"
+                      />
+                      <div>
+                        <h4 className="text-white font-semibold flex items-center">
+                          {review.name}
+                          {review.verified && (
+                            <CheckCircle className="w-4 h-4 text-green-400 ml-2" />
+                          )}
+                        </h4>
+                        <p className="text-gray-400 text-sm">{review.location}</p>
+                      </div>
+                    </div>
+                    {/* Star Rating */}
+                    <div className="flex mb-3">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    {/* Review Comment */}
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {review.comment}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
           {/* Product Features */}
           <div className="mt-12">
             <Card className="glass-card border-white/10 rounded-2xl">
               <CardContent className="p-8 py-[13px] px-[8px]">
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">Premium Features</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-0">
-                  {features.map((feature, index) => <div key={index} className="flex items-center p-3 rounded-lg bg-white/5 border border-white/10 px-[15px]">
+                  {features.map((feature, index) => (
+                    <div key={index} className="flex items-center p-3 rounded-lg bg-white/5 border border-white/10 px-[15px]">
                       <div className="w-3 h-3 bg-[#017aff] rounded-full mr-4 flex-shrink-0"></div>
                       <span className="text-gray-300 text-sm">{feature}</span>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
@@ -177,7 +252,11 @@ const ProductPage = () => {
                 </div>
                 {/* Scale comparison image */}
                 <div className="mb-8">
-                  <img src="/lovable-uploads/665693e7-3e96-4091-b718-98c696a7a35f.png" alt="Diecast car scale comparison showing 1:18, 1:24, 1:37, and 1:64 models" className="w-full max-w-2xl mx-auto rounded-lg border border-white/20" />
+                  <img 
+                    src="/lovable-uploads/665693e7-3e96-4091-b718-98c696a7a35f.png" 
+                    alt="Diecast car scale comparison showing 1:18, 1:24, 1:37, and 1:64 models" 
+                    className="w-full max-w-2xl mx-auto rounded-lg border border-white/20" 
+                  />
                   <p className="text-center text-gray-400 text-sm mt-2">Visual comparison of different diecast scales</p>
                 </div>
                 <div className="space-y-6">
@@ -195,30 +274,18 @@ const ProductPage = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-4">Common Diecast Scales (Approx. Size in cm):</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {[{
-                      scale: '1:18',
-                      size: '24 to 30 cm',
-                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
-                    }, {
-                      scale: '1:24',
-                      size: '16 to 20 cm',
-                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
-                    }, {
-                      scale: '1:32',
-                      size: '10 to 15 cm',
-                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
-                    }, {
-                      scale: '1:43',
-                      size: '8 to 12 cm',
-                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
-                    }, {
-                      scale: '1:64',
-                      size: '6 to 7.5 cm',
-                      color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20'
-                    }].map((item, index) => <div key={index} className={`bg-gradient-to-br ${item.color} backdrop-blur-md border rounded-lg p-4 transition-all duration-300 hover:scale-105`}>
+                      {[
+                        { scale: '1:18', size: '24 to 30 cm', color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20' },
+                        { scale: '1:24', size: '16 to 20 cm', color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20' },
+                        { scale: '1:32', size: '10 to 15 cm', color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20' },
+                        { scale: '1:43', size: '8 to 12 cm', color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20' },
+                        { scale: '1:64', size: '6 to 7.5 cm', color: 'from-[#017aff]/20 to-[#017aff]/30 border-[#017aff]/20' }
+                      ].map((item, index) => (
+                        <div key={index} className={`bg-gradient-to-br ${item.color} backdrop-blur-md border rounded-lg p-4 transition-all duration-300 hover:scale-105`}>
                           <div className="text-white font-bold text-lg mb-1">{item.scale} scale</div>
                           <div className="text-gray-300 text-sm">{item.size}</div>
-                        </div>)}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -229,38 +296,12 @@ const ProductPage = () => {
           {/* Trust Indicators Section */}
           
 
-          {/* Customer Reviews Section */}
-          <div className="mt-16">
-            <h2 className="font-bold text-white text-center mb-8 text-2xl">Happy Customer Reviews :)</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {reviews.map(review => <Card key={review.id} className="glass-card border-white/10">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <img src={review.image} alt={`Review by ${review.name}`} className="w-12 h-12 rounded-full object-cover mr-4" />
-                      <div>
-                        <h4 className="text-white font-semibold flex items-center">
-                          {review.name}
-                          {review.verified && <CheckCircle className="w-4 h-4 text-green-400 ml-2" />}
-                        </h4>
-                        <p className="text-gray-400 text-sm">{review.location}</p>
-                      </div>
-                    </div>
-                    {/* Star Rating */}
-                    <div className="flex mb-3">
-                      {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-                    </div>
-                    {/* Review Comment */}
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {review.comment}
-                    </p>
-                  </CardContent>
-                </Card>)}
-            </div>
-          </div>
         </div>
       </div>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default ProductPage;
