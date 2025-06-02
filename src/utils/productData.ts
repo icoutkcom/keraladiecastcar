@@ -1,12 +1,10 @@
-
 import { landRoverProducts } from './data/landRoverData';
 import { porscheProducts } from './data/porscheData';
 import { accessoriesProducts } from './data/accessoriesData';
 import { mercedesProducts } from './data/mercedesData';
 import { bmwProducts } from './data/bmwData';
 import { audiProducts } from './data/audiData';
-import { toyotaProducts } from './data/toyotaData';
-import { hondaProducts } from './data/hondaData';
+import { teslaProducts } from './data/teslaData';
 import { ferrariProducts } from './data/ferrariData';
 import { lamborghiniProducts } from './data/lamborghiniData';
 import { rollsRoyceProducts } from './data/rollsRoyceData';
@@ -29,8 +27,7 @@ const realProducts: Product[] = [
   ...mercedesProducts,
   ...bmwProducts,
   ...audiProducts,
-  ...toyotaProducts,
-  ...hondaProducts,
+  ...teslaProducts,
   ...ferrariProducts,
   ...lamborghiniProducts,
   ...rollsRoyceProducts,
@@ -39,7 +36,7 @@ const realProducts: Product[] = [
 ];
 
 // Generate more products with different categories
-const carBrands = ['land-rover', 'mercedes', 'bmw', 'audi', 'toyota', 'honda', 'porsche', 'rolls-royce', 'ferrari', 'lamborghini', 'mercedes-benz', 'pagani', 'bugatti'];
+const carBrands = ['land-rover', 'mercedes', 'bmw', 'audi', 'tesla', 'porsche', 'rolls-royce', 'ferrari', 'lamborghini', 'pagani', 'bugatti'];
 const productNames = [
   'Sport Edition',
   'Luxury Model',
@@ -80,8 +77,7 @@ export {
   mercedesProducts,
   bmwProducts,
   audiProducts,
-  toyotaProducts,
-  hondaProducts,
+  teslaProducts,
   ferrariProducts,
   lamborghiniProducts,
   rollsRoyceProducts,

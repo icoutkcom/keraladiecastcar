@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -16,13 +15,11 @@ const categories = [
   { name: 'Mercedes', value: 'mercedes' },
   { name: 'BMW', value: 'bmw' },
   { name: 'Audi', value: 'audi' },
-  { name: 'Toyota', value: 'toyota' },
-  { name: 'Honda', value: 'honda' },
+  { name: 'Tesla', value: 'tesla' },
   { name: 'Porsche', value: 'porsche' },
   { name: 'Rolls Royce', value: 'rolls-royce' },
   { name: 'Ferrari', value: 'ferrari' },
   { name: 'Lamborghini', value: 'lamborghini' },
-  { name: 'Mercedes Benz', value: 'mercedes-benz' },
   { name: 'Pagani', value: 'pagani' },
   { name: 'Bugatti', value: 'bugatti' },
 ];

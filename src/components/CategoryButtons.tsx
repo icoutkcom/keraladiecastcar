@@ -8,13 +8,11 @@ const categories = [
   { name: 'Mercedes', value: 'mercedes', color: 'from-blue-500/20 to-blue-600/30 border-blue-400/20 hover:border-blue-400/40' },
   { name: 'BMW', value: 'bmw', color: 'from-gray-500/20 to-gray-600/30 border-gray-400/20 hover:border-gray-400/40' },
   { name: 'Audi', value: 'audi', color: 'from-red-500/20 to-red-600/30 border-red-400/20 hover:border-red-400/40' },
-  { name: 'Toyota', value: 'toyota', color: 'from-orange-500/20 to-orange-600/30 border-orange-400/20 hover:border-orange-400/40' },
-  { name: 'Honda', value: 'honda', color: 'from-purple-500/20 to-purple-600/30 border-purple-400/20 hover:border-purple-400/40' },
+  { name: 'Tesla', value: 'tesla', color: 'from-red-500/20 to-red-600/30 border-red-400/20 hover:border-red-400/40' },
   { name: 'Porsche', value: 'porsche', color: 'from-yellow-500/20 to-yellow-600/30 border-yellow-400/20 hover:border-yellow-400/40' },
   { name: 'Rolls Royce', value: 'rolls-royce', color: 'from-indigo-500/20 to-indigo-600/30 border-indigo-400/20 hover:border-indigo-400/40' },
   { name: 'Ferrari', value: 'ferrari', color: 'from-red-600/20 to-red-700/30 border-red-500/20 hover:border-red-500/40' },
   { name: 'Lamborghini', value: 'lamborghini', color: 'from-orange-600/20 to-orange-700/30 border-orange-500/20 hover:border-orange-500/40' },
-  { name: 'Mercedes Benz', value: 'mercedes-benz', color: 'from-slate-500/20 to-slate-600/30 border-slate-400/20 hover:border-slate-400/40' },
   { name: 'Pagani', value: 'pagani', color: 'from-cyan-500/20 to-cyan-600/30 border-cyan-400/20 hover:border-cyan-400/40' },
   { name: 'Bugatti', value: 'bugatti', color: 'from-blue-700/20 to-blue-800/30 border-blue-600/20 hover:border-blue-600/40' },
 ];
@@ -41,14 +39,15 @@ const CategoryButtons = () => {
                   group-hover:backdrop-blur-lg
                   overflow-hidden
                   ${category.value === 'bugatti' ? 'ring-2 ring-blue-400/50' : ''}
+                  ${category.value === 'tesla' ? 'ring-2 ring-red-400/50' : ''}
                 `}
               >
                 {/* Glassmorphism overlay */}
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
                 
-                {/* Top selling badge for Bugatti */}
-                {category.value === 'bugatti' && (
-                  <div className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                {/* Top selling badge for Bugatti and Tesla */}
+                {(category.value === 'bugatti' || category.value === 'tesla') && (
+                  <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
                     TOP
                   </div>
                 )}
